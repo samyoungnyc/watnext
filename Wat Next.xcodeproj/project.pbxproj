@@ -29,6 +29,8 @@
 		2B5F3EFB1B7A8AA600E10F89 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B5F3EFA1B7A8AA600E10F89 /* Social.framework */; };
 		2B5F3EFF1B7A8C4100E10F89 /* ENSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3EFD1B7A8C4100E10F89 /* ENSideMenu.swift */; };
 		2B5F3F001B7A8C4100E10F89 /* ENSideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3EFE1B7A8C4100E10F89 /* ENSideMenuNavigationController.swift */; };
+		2B5F3F021B7A921B00E10F89 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3F011B7A921B00E10F89 /* FeedViewController.swift */; };
+		2B5F3F041B7A928900E10F89 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3F031B7A928900E10F89 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,9 @@
 		2B5F3EFA1B7A8AA600E10F89 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		2B5F3EFD1B7A8C4100E10F89 /* ENSideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenu.swift; sourceTree = "<group>"; };
 		2B5F3EFE1B7A8C4100E10F89 /* ENSideMenuNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenuNavigationController.swift; sourceTree = "<group>"; };
+		2B5F3F011B7A921B00E10F89 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		2B5F3F031B7A928900E10F89 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2B5F3F051B7A931500E10F89 /* Wat Next-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wat Next-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				2B5F3EBD1B7A899600E10F89 /* AppDelegate.swift */,
+				2B5F3F011B7A921B00E10F89 /* FeedViewController.swift */,
+				2B5F3F031B7A928900E10F89 /* LoginViewController.swift */,
 				2B5F3EC11B7A899600E10F89 /* Main.storyboard */,
 				2B5F3EC41B7A899600E10F89 /* Images.xcassets */,
 				2B5F3EC61B7A899600E10F89 /* LaunchScreen.xib */,
@@ -139,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				2B5F3EBC1B7A899600E10F89 /* Info.plist */,
+				2B5F3F051B7A931500E10F89 /* Wat Next-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -293,6 +301,8 @@
 			files = (
 				2B5F3F001B7A8C4100E10F89 /* ENSideMenuNavigationController.swift in Sources */,
 				2B5F3EFF1B7A8C4100E10F89 /* ENSideMenu.swift in Sources */,
+				2B5F3F021B7A921B00E10F89 /* FeedViewController.swift in Sources */,
+				2B5F3F041B7A928900E10F89 /* LoginViewController.swift in Sources */,
 				2B5F3EBE1B7A899600E10F89 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,6 +430,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -427,6 +438,8 @@
 				INFOPLIST_FILE = "Wat Next/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Wat Next/Wat Next-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -434,6 +447,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -441,6 +455,7 @@
 				INFOPLIST_FILE = "Wat Next/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Wat Next/Wat Next-Bridging-Header.h";
 			};
 			name = Release;
 		};
