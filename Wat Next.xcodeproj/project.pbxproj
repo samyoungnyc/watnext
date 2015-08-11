@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2B5F3EBE1B7A899600E10F89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3EBD1B7A899600E10F89 /* AppDelegate.swift */; };
+		2B5F3EC01B7A899600E10F89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3EBF1B7A899600E10F89 /* ViewController.swift */; };
+		2B5F3EC31B7A899600E10F89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B5F3EC11B7A899600E10F89 /* Main.storyboard */; };
+		2B5F3EC51B7A899600E10F89 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B5F3EC41B7A899600E10F89 /* Images.xcassets */; };
+		2B5F3EC81B7A899600E10F89 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B5F3EC61B7A899600E10F89 /* LaunchScreen.xib */; };
+		2B5F3ED41B7A899600E10F89 /* Wat_NextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3ED31B7A899600E10F89 /* Wat_NextTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2B5F3ECE1B7A899600E10F89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2B5F3EB01B7A899600E10F89 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2B5F3EB71B7A899600E10F89;
+			remoteInfo = "Wat Next";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2B5F3EB81B7A899600E10F89 /* Wat Next.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wat Next.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B5F3EBC1B7A899600E10F89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B5F3EBD1B7A899600E10F89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2B5F3EBF1B7A899600E10F89 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2B5F3EC21B7A899600E10F89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2B5F3EC41B7A899600E10F89 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2B5F3EC71B7A899600E10F89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		2B5F3ECD1B7A899600E10F89 /* Wat NextTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Wat NextTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B5F3ED21B7A899600E10F89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B5F3ED31B7A899600E10F89 /* Wat_NextTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wat_NextTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2B5F3EB51B7A899600E10F89 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B5F3ECA1B7A899600E10F89 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2B5F3EAF1B7A899600E10F89 = {
+			isa = PBXGroup;
+			children = (
+				2B5F3EBA1B7A899600E10F89 /* Wat Next */,
+				2B5F3ED01B7A899600E10F89 /* Wat NextTests */,
+				2B5F3EB91B7A899600E10F89 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2B5F3EB91B7A899600E10F89 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2B5F3EB81B7A899600E10F89 /* Wat Next.app */,
+				2B5F3ECD1B7A899600E10F89 /* Wat NextTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2B5F3EBA1B7A899600E10F89 /* Wat Next */ = {
+			isa = PBXGroup;
+			children = (
+				2B5F3EBD1B7A899600E10F89 /* AppDelegate.swift */,
+				2B5F3EBF1B7A899600E10F89 /* ViewController.swift */,
+				2B5F3EC11B7A899600E10F89 /* Main.storyboard */,
+				2B5F3EC41B7A899600E10F89 /* Images.xcassets */,
+				2B5F3EC61B7A899600E10F89 /* LaunchScreen.xib */,
+				2B5F3EBB1B7A899600E10F89 /* Supporting Files */,
+			);
+			path = "Wat Next";
+			sourceTree = "<group>";
+		};
+		2B5F3EBB1B7A899600E10F89 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2B5F3EBC1B7A899600E10F89 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2B5F3ED01B7A899600E10F89 /* Wat NextTests */ = {
+			isa = PBXGroup;
+			children = (
+				2B5F3ED31B7A899600E10F89 /* Wat_NextTests.swift */,
+				2B5F3ED11B7A899600E10F89 /* Supporting Files */,
+			);
+			path = "Wat NextTests";
+			sourceTree = "<group>";
+		};
+		2B5F3ED11B7A899600E10F89 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2B5F3ED21B7A899600E10F89 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2B5F3EB71B7A899600E10F89 /* Wat Next */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B5F3ED71B7A899600E10F89 /* Build configuration list for PBXNativeTarget "Wat Next" */;
+			buildPhases = (
+				2B5F3EB41B7A899600E10F89 /* Sources */,
+				2B5F3EB51B7A899600E10F89 /* Frameworks */,
+				2B5F3EB61B7A899600E10F89 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Wat Next";
+			productName = "Wat Next";
+			productReference = 2B5F3EB81B7A899600E10F89 /* Wat Next.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2B5F3ECC1B7A899600E10F89 /* Wat NextTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B5F3EDA1B7A899600E10F89 /* Build configuration list for PBXNativeTarget "Wat NextTests" */;
+			buildPhases = (
+				2B5F3EC91B7A899600E10F89 /* Sources */,
+				2B5F3ECA1B7A899600E10F89 /* Frameworks */,
+				2B5F3ECB1B7A899600E10F89 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2B5F3ECF1B7A899600E10F89 /* PBXTargetDependency */,
+			);
+			name = "Wat NextTests";
+			productName = "Wat NextTests";
+			productReference = 2B5F3ECD1B7A899600E10F89 /* Wat NextTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2B5F3EB01B7A899600E10F89 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = computer;
+				TargetAttributes = {
+					2B5F3EB71B7A899600E10F89 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					2B5F3ECC1B7A899600E10F89 = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = 2B5F3EB71B7A899600E10F89;
+					};
+				};
+			};
+			buildConfigurationList = 2B5F3EB31B7A899600E10F89 /* Build configuration list for PBXProject "Wat Next" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2B5F3EAF1B7A899600E10F89;
+			productRefGroup = 2B5F3EB91B7A899600E10F89 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2B5F3EB71B7A899600E10F89 /* Wat Next */,
+				2B5F3ECC1B7A899600E10F89 /* Wat NextTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2B5F3EB61B7A899600E10F89 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B5F3EC31B7A899600E10F89 /* Main.storyboard in Resources */,
+				2B5F3EC81B7A899600E10F89 /* LaunchScreen.xib in Resources */,
+				2B5F3EC51B7A899600E10F89 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B5F3ECB1B7A899600E10F89 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2B5F3EB41B7A899600E10F89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B5F3EC01B7A899600E10F89 /* ViewController.swift in Sources */,
+				2B5F3EBE1B7A899600E10F89 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B5F3EC91B7A899600E10F89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B5F3ED41B7A899600E10F89 /* Wat_NextTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2B5F3ECF1B7A899600E10F89 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2B5F3EB71B7A899600E10F89 /* Wat Next */;
+			targetProxy = 2B5F3ECE1B7A899600E10F89 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2B5F3EC11B7A899600E10F89 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2B5F3EC21B7A899600E10F89 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2B5F3EC61B7A899600E10F89 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2B5F3EC71B7A899600E10F89 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2B5F3ED51B7A899600E10F89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2B5F3ED61B7A899600E10F89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2B5F3ED81B7A899600E10F89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Wat Next/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2B5F3ED91B7A899600E10F89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Wat Next/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2B5F3EDB1B7A899600E10F89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Wat NextTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wat Next.app/Wat Next";
+			};
+			name = Debug;
+		};
+		2B5F3EDC1B7A899600E10F89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Wat NextTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wat Next.app/Wat Next";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2B5F3EB31B7A899600E10F89 /* Build configuration list for PBXProject "Wat Next" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B5F3ED51B7A899600E10F89 /* Debug */,
+				2B5F3ED61B7A899600E10F89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2B5F3ED71B7A899600E10F89 /* Build configuration list for PBXNativeTarget "Wat Next" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B5F3ED81B7A899600E10F89 /* Debug */,
+				2B5F3ED91B7A899600E10F89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2B5F3EDA1B7A899600E10F89 /* Build configuration list for PBXNativeTarget "Wat NextTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B5F3EDB1B7A899600E10F89 /* Debug */,
+				2B5F3EDC1B7A899600E10F89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2B5F3EB01B7A899600E10F89 /* Project object */;
+}
