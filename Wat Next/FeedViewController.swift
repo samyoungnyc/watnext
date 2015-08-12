@@ -6,7 +6,7 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class FeedViewController: UITableViewController, CLLocationManagerDelegate {
+class FeedViewController: UITableViewController, ENSideMenuDelegate, CLLocationManagerDelegate {
     var feedItems: [FeedItem] = []
     let locationManager = CLLocationManager()
     var location: CLLocation?
@@ -17,9 +17,15 @@ class FeedViewController: UITableViewController, CLLocationManagerDelegate {
     var foo: String?
     var number: Int?
     
+    @IBAction func toggleSideMenu(sender: AnyObject) {
+        toggleSideMenuView()
+
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.sideMenuController()?.sideMenu?.delegate = self
+
         println(self.foo)
         println(self.number)
         println("Latitidue: \(self.dropoffLocation?.latitude)")
@@ -51,6 +57,20 @@ class FeedViewController: UITableViewController, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.startUpdatingLocation()
         
+    }
+    
+    // MARK: - ENSideMenu Delegate
+    func sideMenuWillOpen() {
+        println("sideMenuWillOpen")
+    }
+    
+    func sideMenuWillClose() {
+        println("sideMenuWillClose")
+    }
+    
+    func sideMenuShouldOpenSideMenu() -> Bool {
+        println("sideMenuShouldOpenSideMenu")
+        return true
     }
     
     override func viewDidAppear(animated: Bool) {

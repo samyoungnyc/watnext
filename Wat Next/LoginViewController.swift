@@ -8,11 +8,25 @@
 
 import UIKit
 
-class LoginViewController: UINavigationController, UINavigationControllerDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
+class LoginViewController: ENSideMenuNavigationController, ENSideMenuDelegate, UINavigationControllerDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
+        
+        sideMenu = ENSideMenu(sourceView: self.view, menuViewController: MyMenuTableViewController(), menuPosition:.Left)
+        
+        view.bringSubviewToFront(navigationBar)
+        
+    }
+    
+    // MARK: - ENSideMenu Delegate
+    func sideMenuWillOpen() {
+        println("sideMenuWillOpen")
+    }
+    
+    func sideMenuWillClose() {
+        println("sideMenuWillClose")
     }
    
     override func viewDidAppear(animated: Bool) {
