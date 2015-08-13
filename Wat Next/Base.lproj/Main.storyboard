@@ -52,14 +52,14 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UfV-4n-CdN" customClass="PFImageView">
                                             <rect key="frame" x="0.0" y="80" width="600" height="279"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apn-l8-lVI">
-                                            <rect key="frame" x="13" y="379" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apn-l8-lVI">
+                                            <rect key="frame" x="13" y="379" width="47" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nS4-rd-qtd">
-                                            <rect key="frame" x="558" y="379" width="34" height="30"/>
+                                            <rect key="frame" x="550" y="379" width="34" height="30"/>
                                             <state key="normal" title="Uber">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -67,17 +67,17 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstItem="Zc3-Wa-TEP" firstAttribute="top" secondItem="7Dq-Uv-XFN" secondAttribute="top" constant="39" id="4oA-B3-RGL"/>
-                                        <constraint firstAttribute="trailing" secondItem="zzr-Pz-Pvc" secondAttribute="trailing" constant="16" id="BWv-sv-mx5"/>
-                                        <constraint firstAttribute="bottom" secondItem="apn-l8-lVI" secondAttribute="bottom" constant="37" id="GgP-7a-PgE"/>
-                                        <constraint firstItem="apn-l8-lVI" firstAttribute="leading" secondItem="7Dq-Uv-XFN" secondAttribute="leading" constant="13" id="LNh-bc-ojJ"/>
-                                        <constraint firstAttribute="bottom" secondItem="UfV-4n-CdN" secondAttribute="bottom" constant="78" id="TKr-vq-Lfs"/>
-                                        <constraint firstItem="UfV-4n-CdN" firstAttribute="top" secondItem="7Dq-Uv-XFN" secondAttribute="top" constant="80" id="biM-EV-1Fh"/>
-                                        <constraint firstAttribute="bottom" secondItem="nS4-rd-qtd" secondAttribute="bottom" constant="28" id="kIJ-qk-pMV"/>
-                                        <constraint firstItem="Zc3-Wa-TEP" firstAttribute="leading" secondItem="7Dq-Uv-XFN" secondAttribute="leading" constant="13" id="nIT-mC-Vrg"/>
-                                        <constraint firstItem="zzr-Pz-Pvc" firstAttribute="top" secondItem="7Dq-Uv-XFN" secondAttribute="top" constant="39" id="oPM-nk-KmT"/>
-                                        <constraint firstAttribute="trailing" secondItem="nS4-rd-qtd" secondAttribute="trailing" constant="8" id="t0L-sp-qDS"/>
-                                        <constraint firstAttribute="centerX" secondItem="UfV-4n-CdN" secondAttribute="centerX" id="xkC-NM-qB8"/>
+                                        <constraint firstAttribute="trailing" secondItem="nS4-rd-qtd" secondAttribute="trailing" constant="16" id="MtP-5E-LwI"/>
+                                        <constraint firstItem="apn-l8-lVI" firstAttribute="leading" secondItem="7Dq-Uv-XFN" secondAttribute="leading" constant="13" id="Mwu-iv-nHU"/>
+                                        <constraint firstItem="Zc3-Wa-TEP" firstAttribute="top" secondItem="7Dq-Uv-XFN" secondAttribute="top" constant="39" id="Rty-PU-rId"/>
+                                        <constraint firstAttribute="centerX" secondItem="UfV-4n-CdN" secondAttribute="centerX" id="ZmT-Lb-9sX"/>
+                                        <constraint firstItem="Zc3-Wa-TEP" firstAttribute="leading" secondItem="7Dq-Uv-XFN" secondAttribute="leading" constant="13" id="ZoX-EF-hNh"/>
+                                        <constraint firstAttribute="bottom" secondItem="UfV-4n-CdN" secondAttribute="bottom" constant="78" id="e4r-Tq-spf"/>
+                                        <constraint firstAttribute="bottom" secondItem="apn-l8-lVI" secondAttribute="bottom" constant="37" id="pDR-uu-X3Y"/>
+                                        <constraint firstAttribute="bottom" secondItem="nS4-rd-qtd" secondAttribute="bottom" constant="28" id="tQk-ee-eZ7"/>
+                                        <constraint firstItem="UfV-4n-CdN" firstAttribute="top" secondItem="7Dq-Uv-XFN" secondAttribute="top" constant="80" id="u5o-LX-EfM"/>
+                                        <constraint firstItem="zzr-Pz-Pvc" firstAttribute="top" secondItem="7Dq-Uv-XFN" secondAttribute="top" constant="39" id="yZ6-oH-KiP"/>
+                                        <constraint firstAttribute="trailing" secondItem="zzr-Pz-Pvc" secondAttribute="trailing" constant="16" id="zOR-KG-41d"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -109,6 +109,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="p9T-tj-8m4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
