@@ -80,17 +80,17 @@ class VenueViewController: UICollectionViewController, UICollectionViewDelegate,
         return cell
     }
     
-//    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-//        //              prepare data for SelectScreen. use temporary variables, store, then
-//        //              use instantiateViewController
-//        //              then assign var's from SelectView to temporary variables above
-//        //              then presentViewController
-//        let selectedCell = collectionView.cellForItemAtIndexPath(indexPath) as! VenueItemCell!
-//        
-//        let selectVC: SelectViewController! = self.storyboard?.instantiateViewControllerWithIdentifier("selectVC") as! SelectViewController
-//        selectVC.currentVenue = venueItems[indexPath.row]
-//        
-//        presentViewController(selectVC, animated: true, completion: nil)
-//    }
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        //              prepare data for SelectScreen. use temporary variables, store, then
+        //              use instantiateViewController
+        //              then assign var's from SelectView to temporary variables above
+        //              then presentViewController
+        let selectedCell = collectionView.cellForItemAtIndexPath(indexPath) as! VenueItemCell!
+        
+        let selectVC: SelectViewController! = self.storyboard?.instantiateViewControllerWithIdentifier("selectVC") as! SelectViewController
+        selectVC.currentVenue = venueItems[indexPath.row]
+        
+        presentViewController(selectVC, animated: true, completion: nil)
+    }
     
 }
