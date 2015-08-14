@@ -91,6 +91,8 @@ class VenueViewController: UICollectionViewController, UICollectionViewDelegate,
         selectVC.currentVenue = venueItems[indexPath.row]
         
         presentViewController(selectVC, animated: true, completion: nil)
+        
+    
     }
     
 }
