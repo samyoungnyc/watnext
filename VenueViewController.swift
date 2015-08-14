@@ -85,14 +85,13 @@ class VenueViewController: UICollectionViewController, UICollectionViewDelegate,
         //              use instantiateViewController
         //              then assign var's from SelectView to temporary variables above
         //              then presentViewController
-        let selectedCell = collectionView.cellForItemAtIndexPath(indexPath) as! VenueItemCell!
+
         
-        let selectVC: SelectViewController! = self.storyboard?.instantiateViewControllerWithIdentifier("selectVC") as! SelectViewController
+        let selectNavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("selectNavController") as! UINavigationController
+        let selectVC = selectNavigationController.topViewController as! SelectViewController
         selectVC.currentVenue = venueItems[indexPath.row]
-        
-        presentViewController(selectVC, animated: true, completion: nil)
-        
-    
+
+        presentViewController(selectNavigationController, animated: true, completion: nil)
     }
     
 }
