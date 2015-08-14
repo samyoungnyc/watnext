@@ -81,12 +81,7 @@ class VenueViewController: UICollectionViewController, UICollectionViewDelegate,
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        //              prepare data for SelectScreen. use temporary variables, store, then
-        //              use instantiateViewController
-        //              then assign var's from SelectView to temporary variables above
-        //              then presentViewController
-
-        
+    
         let selectNavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("selectNavController") as! UINavigationController
         let selectVC = selectNavigationController.topViewController as! SelectViewController
         selectVC.currentVenue = venueItems[indexPath.row]
