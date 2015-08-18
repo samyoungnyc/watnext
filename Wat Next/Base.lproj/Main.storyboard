@@ -231,7 +231,13 @@
                             <constraint firstAttribute="centerX" secondItem="bDV-KE-ROt" secondAttribute="centerX" id="wcV-ur-xiN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Uvj-u7-EoM"/>
+                    <navigationItem key="navigationItem" id="Uvj-u7-EoM">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="0uc-36-Y59">
+                            <connections>
+                                <action selector="backTapped:" destination="R8Z-ue-Afn" id="edj-UE-hMo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="bDV-KE-ROt" id="NXF-xP-GTn"/>
                         <outlet property="venueName" destination="yoZ-XZ-B77" id="FmE-da-aj3"/>

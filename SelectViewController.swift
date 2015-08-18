@@ -14,6 +14,10 @@ class SelectViewController: UIViewController {
     
     @IBOutlet weak var imageView: PFImageView!
     
+    @IBAction func backTapped(sender: UIBarButtonItem) {
+        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+        println("backbuttonpress")
+    }
     var currentVenue: Venue?
     
     override func viewDidLoad() {
