@@ -13,6 +13,7 @@ class LoginViewController: UITabBarController, PFLogInViewControllerDelegate, PF
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.delegate = self
+
     }
    
     override func viewDidAppear(animated: Bool) {

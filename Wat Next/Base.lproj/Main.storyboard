@@ -31,7 +31,7 @@
         <!--Feed View Controller-->
         <scene sceneID="s7z-26-zqR">
             <objects>
-                <tableViewController id="Rc1-tB-t10" customClass="FeedViewController" customModule="Wat_Next" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="feedVC" id="Rc1-tB-t10" customClass="FeedViewController" customModule="Wat_Next" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="xDi-c8-fPg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -165,6 +165,9 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="uUN-dT-bet"/>
+                    <connections>
+                        <segue destination="Rc1-tB-t10" kind="custom" identifier="tab0" customClass="JLTTabSegue" id="J2c-jQ-Fhm"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qb1-4M-86T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -217,6 +220,9 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="nextTapped:" destination="R8Z-ue-Afn" eventType="touchUpInside" id="plr-wz-rUu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -267,4 +273,7 @@
             <point key="canvasLocation" x="-219" y="1058"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="J2c-jQ-Fhm"/>
+    </inferredMetricsTieBreakers>
 </document>

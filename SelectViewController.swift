@@ -9,16 +9,40 @@
 import UIKit
 
 class SelectViewController: UIViewController {
+    
 
+    
     @IBOutlet weak var venueName: UILabel!
     
     @IBOutlet weak var imageView: PFImageView!
     
-    @IBAction func backTapped(sender: UIBarButtonItem) {
-        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
-        println("backbuttonpress")
-    }
     var currentVenue: Venue?
+    
+    @IBAction func backTapped(sender: UIBarButtonItem) {
+
+        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
+    @IBAction func nextTapped(sender: UIButton) {
+        // Set defaults for segueing in next View
+        let defaults = NSUserDefaults.standardUserDefaults()
+        var nextPushed = "fromSelectVC"
+        defaults.setObject("nextPushed", forKey: "nextPushed")
+        
+        // Create FeedItem
+        var feedItem = FeedItem()
+        if let currentVenue = currentVenue {
+            feedItem.venueName = currentVenue.venueName
+            feedItem.imageFile = currentVenue.lgImg
+            feedItem.location = currentVenue.venueLocation
+            println(feedItem.location)
+            feedItem.userName = PFUser.currentUser()!.username!
+            feedItem.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
+                self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+            })
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

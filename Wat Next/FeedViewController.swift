@@ -13,48 +13,7 @@ class FeedViewController: UITableViewController, CLLocationManagerDelegate {
 //    var coordinate: CLLocationCoordinate2D?
 //    var pickupLocation: CLLocationCoordinate2D?
 //    var dropoffLocation: CLLocationCoordinate2D?
-    
-    var foo: String?
-    var number: Int?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        println(self.foo)
-        println(self.number)
-//        println("Latitiude: \(self.dropoffLocation?.latitude)")
-        
-        
-        // MARK: Set up Pull-To-Refresh
-        var refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: Selector("getAndShowFeedItems"), forControlEvents: UIControlEvents.ValueChanged)
-        self.refreshControl = refreshControl
-        
-        // MARK: NavBar Styling
-        var nav = self.navigationController?.navigationBar
-        nav?.barStyle = UIBarStyle.Black
-        tableView.allowsSelection = false
-        
-        // MARK: Navigation Image Setup
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 80, height: 45))
-        imageView.contentMode = .ScaleAspectFit
-        let image = UIImage(named: "navlogo1")
-        imageView.image = image
-        navigationItem.titleView = imageView
-        
-    }
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        getAndShowFeedItems()
-        
-//        locationManager.delegate = self
-//        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-//        locationManager.startUpdatingLocation()
-//        
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-    }
+
     
     func getAndShowFeedItems() {
         feedItems.removeAll(keepCapacity: false)
@@ -75,8 +34,51 @@ class FeedViewController: UITableViewController, CLLocationManagerDelegate {
             }
             self.tableView.reloadData()
             self.refreshControl?.endRefreshing()
+            self.resetUserDefaults()
         }
     }
+    
+    func resetUserDefaults() {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(nil, forKey: "nextPushed")
+        defaults.synchronize()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+//        println("Latitiude: \(self.dropoffLocation?.latitude)")
+        
+        // MARK: Set up Pull-To-Refresh
+        var refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: Selector("getAndShowFeedItems"), forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl = refreshControl
+        
+        // MARK: NavBar Styling
+        var nav = self.navigationController?.navigationBar
+        nav?.barStyle = UIBarStyle.Black
+        tableView.allowsSelection = false
+        
+        // MARK: Navigation Image Setup
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 80, height: 45))
+        imageView.contentMode = .ScaleAspectFit
+        let image = UIImage(named: "navlogo1")
+        imageView.image = image
+        navigationItem.titleView = imageView
+        
+
+    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        getAndShowFeedItems()
+        
+//        locationManager.delegate = self
+//        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+//        locationManager.startUpdatingLocation()
+//        
+    }
+    
+
     
     // MARK: TableView Delegate Methods
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

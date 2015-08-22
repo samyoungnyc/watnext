@@ -11,21 +11,6 @@ import UIKit
 class VenueViewController: UICollectionViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     var venueItems: [Venue] = []
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // MARK: NavBar Styling
-        var nav = self.navigationController?.navigationBar
-        nav?.barStyle = UIBarStyle.Black
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 80, height: 45))
-        imageView.contentMode = .ScaleAspectFit
-        let image = UIImage(named: "navlogo1")
-        imageView.image = image
-        navigationItem.titleView = imageView
-        
-        // Fetch Venues for Grid
-        fetchItems()
-    }
-    
     func fetchItems() {
         venueItems.removeAll(keepCapacity: false)
         let prepItems = Venue.query()
@@ -42,8 +27,31 @@ class VenueViewController: UICollectionViewController, UICollectionViewDelegate,
         })
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // MARK: NavBar Styling
+        var nav = self.navigationController?.navigationBar
+        nav?.barStyle = UIBarStyle.Black
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 80, height: 45))
+        imageView.contentMode = .ScaleAspectFit
+        let image = UIImage(named: "navlogo1")
+        imageView.image = image
+        navigationItem.titleView = imageView
+        
+        // Fetch Venues for VenueCollectionView
+        fetchItems()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        // Defaults for segueing
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if let defaultString = defaults.stringForKey("nextPushed") {
+            performSegueWithIdentifier("tab0", sender: self)
+            } else {
+            println("default reset to nil in FeedView")
+        }
     }
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
