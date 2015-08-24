@@ -13,6 +13,7 @@ class FeedItem: PFObject, PFSubclassing {
     @NSManaged var imageFile: PFFile
     @NSManaged var userName: String
     @NSManaged var location: PFGeoPoint
+    @NSManaged var _dropoffLocation: CLLocationCoordinate2D
     
     
     override class func initialize() {
@@ -23,4 +24,3 @@ class FeedItem: PFObject, PFSubclassing {
         return "FeedItem"
     }
 }
-

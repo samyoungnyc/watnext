@@ -61,14 +61,16 @@ class SelectViewController: UIViewController {
         }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+
+//extension PFGeoPoint {
+//    public var iosLocation: CLLocationCoordinate2D {
+//        get {
+//            return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+//        }
+//    }
+//}
+
+
+

@@ -8,12 +8,12 @@ import MapKit
 
 class FeedViewController: UITableViewController, CLLocationManagerDelegate {
     var feedItems: [FeedItem] = []
-//    let locationManager = CLLocationManager()
-//    var location: CLLocation?
-//    var coordinate: CLLocationCoordinate2D?
-//    var pickupLocation: CLLocationCoordinate2D?
-//    var dropoffLocation: CLLocationCoordinate2D?
-
+    
+    let locationManager = CLLocationManager()
+    var location: CLLocation?
+    var pickupLocation: CLLocationCoordinate2D?
+    var dropoffLocation: CLLocationCoordinate2D?
+    
     
     func getAndShowFeedItems() {
         feedItems.removeAll(keepCapacity: false)
@@ -44,6 +44,31 @@ class FeedViewController: UITableViewController, CLLocationManagerDelegate {
         defaults.synchronize()
     }
     
+    func uberButtonPressed(sender: UIButton!) {
+        let senderButton = sender
+        println(sender.tag)
+        let authStatus = CLLocationManager.authorizationStatus()
+        if authStatus == .NotDetermined {
+            locationManager.requestWhenInUseAuthorization()
+            return
+        }
+        
+        callUber()
+    }
+    
+    func callUber() {
+        println("started function callUber")
+        //Create an Uber Deep Link instance
+
+        var uber = Uber(pickupLocation: self.pickupLocation!)
+        uber.pickupNickname = "Current Location"
+        uber.dropoffLocation = dropoffLocation
+        println("Dropoff Latitude: \(uber.dropoffLocation?.latitude)")
+        println("Dropoff Longitude: \(uber.dropoffLocation?.longitude)")
+        uber.dropoffNickname = "Next Place"
+        uber.deepLink()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -72,13 +97,11 @@ class FeedViewController: UITableViewController, CLLocationManagerDelegate {
         super.viewWillAppear(animated)
         getAndShowFeedItems()
         
-//        locationManager.delegate = self
-//        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-//        locationManager.startUpdatingLocation()
-//        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.startUpdatingLocation()
+        
     }
-    
-
     
     // MARK: TableView Delegate Methods
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -90,7 +113,7 @@ class FeedViewController: UITableViewController, CLLocationManagerDelegate {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return self.view.frame.height - 112 // explanation needed
+        return self.view.frame.height - 60 // explanation needed
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -101,6 +124,10 @@ class FeedViewController: UITableViewController, CLLocationManagerDelegate {
         let formatter = NSDateFormatter()
         formatter.dateFormat = "hh:mm"
         let dateString = formatter.stringFromDate(date!)
+        dropoffLocation = currentItem.location.iosLocation
+        println("dropoff cell latitude \(dropoffLocation?.latitude)")
+        println("dropoff cell longitude \(dropoffLocation?.longitude)")
+
         
         cell.userName?.text = currentItem.userName
         cell.venueName?.text = currentItem.venueName
@@ -126,43 +153,28 @@ class FeedViewController: UITableViewController, CLLocationManagerDelegate {
     
     //MARK: Delegate methods for CLLocationManager
     
-//    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-//        println("location manager didUpdateLocations")
-//        let newLocation = locations.last as! CLLocation
-//        self.location = newLocation as CLLocation?
-//        self.pickupLocation = self.location!.coordinate as CLLocationCoordinate2D!
-//        
-//        if (self.pickupLocation != nil) {
-//            locationManager.stopUpdatingLocation()
-//        }
-//    }
-//    
-//    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
-//        println("error: \(error)")
-//    }
-//    
-//    func callUber() {
-//        println("callUber")
-//        //Create an Uber Deep Link instance
-//        
-//        var uber = Uber(pickupLocation: self.pickupLocation!)
-//        uber.pickupNickname = "Current Location"
-//        uber.dropoffLocation = self.dropoffLocation!
-//        println("Latitidue: \(self.dropoffLocation?.latitude)")
-//        uber.dropoffNickname = "Next Place"
-//        uber.deepLink()
-//    }
-//    
-//    func uberButtonPressed(sender: UIButton!) {
-//        let senderButton = sender
-//        println(sender.tag)
-//        
-//        let authStatus = CLLocationManager.authorizationStatus()
-//        if authStatus == .NotDetermined {
-//            locationManager.requestWhenInUseAuthorization()
-//            return
-//        }
-//        
-//        callUber()
-//    }
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        println("location manager didUpdateLocations")
+        let newLocation = locations.last as! CLLocation
+        self.location = newLocation as CLLocation?
+        self.pickupLocation = self.location!.coordinate as CLLocationCoordinate2D!
+        
+        if (self.pickupLocation != nil) {
+            println("FeedView stoppedUpdatingLocations")
+            locationManager.stopUpdatingLocation()
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+        println("error: \(error)")
+    }
 }
+
+extension PFGeoPoint {
+    public var iosLocation: CLLocationCoordinate2D {
+        get {
+            return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        }
+    }
+}
+
