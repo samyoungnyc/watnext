@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 class SelectViewController: UIViewController {
     
@@ -15,6 +16,8 @@ class SelectViewController: UIViewController {
     @IBOutlet weak var venueName: UILabel!
     
     @IBOutlet weak var imageView: PFImageView!
+    
+    @IBOutlet weak var nextButton: GlowingButton!
     
     var currentVenue: Venue?
     
@@ -47,6 +50,21 @@ class SelectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // MARK: NavBar Styling
+        var nav = self.navigationController?.navigationBar
+        nav?.barStyle = UIBarStyle.Black
+        
+        // MARK: Navigation Image Setup
+        let navImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 80, height: 45))
+        navImageView.contentMode = .ScaleAspectFit
+        let navImage = UIImage(named: "navlogo")
+        navImageView.image = navImage
+        navigationItem.titleView = navImageView
+        
+        // Set Glow Animation on Next Button
+        
+        nextButton.startGlowWithCGColor(UIColor.yellowColor().CGColor)
+        
         // Set Fonts
         venueName.font = UIFont.boldSystemFontOfSize(17.0)
         
@@ -62,15 +80,5 @@ class SelectViewController: UIViewController {
     }
 
 }
-
-
-//extension PFGeoPoint {
-//    public var iosLocation: CLLocationCoordinate2D {
-//        get {
-//            return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-//        }
-//    }
-//}
-
 
 

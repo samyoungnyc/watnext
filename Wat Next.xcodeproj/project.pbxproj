@@ -37,6 +37,7 @@
 		2B5F3F221B7CF57400E10F89 /* VenueViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3F211B7CF57400E10F89 /* VenueViewCell.swift */; };
 		2B99F2C21B7D1D8500AFC30B /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B99F2C11B7D1D8500AFC30B /* SelectViewController.swift */; };
 		2B99F2C41B88018D00AFC30B /* JLTTabSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B99F2C31B88018D00AFC30B /* JLTTabSegue.m */; };
+		2B99F2C71B8D094C00AFC30B /* GlowingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B99F2C61B8D094C00AFC30B /* GlowingButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		2B99F2C11B7D1D8500AFC30B /* SelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 		2B99F2C31B88018D00AFC30B /* JLTTabSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLTTabSegue.m; sourceTree = "<group>"; };
 		2B99F2C51B88019500AFC30B /* JLTTabSegue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLTTabSegue.h; sourceTree = "<group>"; };
+		2B99F2C61B8D094C00AFC30B /* GlowingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlowingButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +209,7 @@
 			children = (
 				2B99F2C51B88019500AFC30B /* JLTTabSegue.h */,
 				2B99F2C31B88018D00AFC30B /* JLTTabSegue.m */,
+				2B99F2C61B8D094C00AFC30B /* GlowingButton.swift */,
 				2B5F3F081B7BB4FD00E10F89 /* Uber.swift */,
 			);
 			name = Library;
@@ -355,6 +358,7 @@
 				2B5F3F221B7CF57400E10F89 /* VenueViewCell.swift in Sources */,
 				2B5F3F041B7A928900E10F89 /* LoginViewController.swift in Sources */,
 				2B5F3F0B1B7BB5EB00E10F89 /* FeedItem.swift in Sources */,
+				2B99F2C71B8D094C00AFC30B /* GlowingButton.swift in Sources */,
 				2B5F3F201B7CF54600E10F89 /* VenueViewController.swift in Sources */,
 				2B5F3EBE1B7A899600E10F89 /* AppDelegate.swift in Sources */,
 			);

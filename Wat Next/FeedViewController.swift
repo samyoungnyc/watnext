@@ -14,7 +14,6 @@ class FeedViewController: UITableViewController, CLLocationManagerDelegate {
     var pickupLocation: CLLocationCoordinate2D?
     var dropoffLocation: CLLocationCoordinate2D?
     
-    
     func getAndShowFeedItems() {
         feedItems.removeAll(keepCapacity: false)
         
@@ -113,7 +112,7 @@ class FeedViewController: UITableViewController, CLLocationManagerDelegate {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return self.view.frame.height - 60 // explanation needed
+        return self.view.frame.height - 112 // explanation needed
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -147,7 +146,6 @@ class FeedViewController: UITableViewController, CLLocationManagerDelegate {
         // MARK: Set up Uber Button
         cell.uberButton.tag = indexPath.row
         cell.uberButton.addTarget(self, action: "uberButtonPressed:", forControlEvents: .TouchUpInside)
-        
         return cell
     }
     

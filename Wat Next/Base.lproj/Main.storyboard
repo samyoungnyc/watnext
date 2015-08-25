@@ -43,28 +43,28 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zc3-Wa-TEP">
-                                            <rect key="frame" x="13" y="39" width="76" height="21"/>
+                                            <rect key="frame" x="13" y="50" width="76" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:30" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zzr-Pz-Pvc">
-                                            <rect key="frame" x="541" y="39" width="43" height="21"/>
+                                            <rect key="frame" x="541" y="50" width="43" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UfV-4n-CdN" customClass="PFImageView">
-                                            <rect key="frame" x="0.0" y="70" width="600" height="279"/>
+                                            <rect key="frame" x="0.0" y="91" width="600" height="279"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apn-l8-lVI">
-                                            <rect key="frame" x="13" y="379" width="47" height="21"/>
+                                            <rect key="frame" x="13" y="400" width="47" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nS4-rd-qtd">
-                                            <rect key="frame" x="550" y="379" width="34" height="30"/>
+                                            <rect key="frame" x="550" y="400" width="34" height="30"/>
                                             <state key="normal" title="Uber">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -72,18 +72,18 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstItem="UfV-4n-CdN" firstAttribute="leading" secondItem="7Dq-Uv-XFN" secondAttribute="leading" id="Eh1-tB-vvc"/>
-                                        <constraint firstItem="Zc3-Wa-TEP" firstAttribute="top" secondItem="7Dq-Uv-XFN" secondAttribute="top" constant="39" id="FkA-as-mib"/>
-                                        <constraint firstItem="zzr-Pz-Pvc" firstAttribute="top" secondItem="7Dq-Uv-XFN" secondAttribute="top" constant="39" id="MuF-gF-bNK"/>
-                                        <constraint firstItem="apn-l8-lVI" firstAttribute="leading" secondItem="7Dq-Uv-XFN" secondAttribute="leading" constant="13" id="Nas-M2-rv0"/>
-                                        <constraint firstAttribute="trailing" secondItem="zzr-Pz-Pvc" secondAttribute="trailing" constant="16" id="QRy-X7-1lZ"/>
-                                        <constraint firstItem="UfV-4n-CdN" firstAttribute="top" secondItem="7Dq-Uv-XFN" secondAttribute="top" constant="70" id="X8i-7C-nKU"/>
-                                        <constraint firstAttribute="trailing" secondItem="nS4-rd-qtd" secondAttribute="trailing" constant="16" id="Yjq-v2-t8d"/>
-                                        <constraint firstAttribute="centerX" secondItem="UfV-4n-CdN" secondAttribute="centerX" id="gxn-G5-plb"/>
-                                        <constraint firstAttribute="bottom" secondItem="apn-l8-lVI" secondAttribute="bottom" constant="65" id="l1Q-g2-dDF"/>
-                                        <constraint firstAttribute="bottom" secondItem="nS4-rd-qtd" secondAttribute="bottom" constant="56" id="nGq-jo-zF4"/>
-                                        <constraint firstItem="Zc3-Wa-TEP" firstAttribute="leading" secondItem="7Dq-Uv-XFN" secondAttribute="leading" constant="13" id="rrj-Hn-Htt"/>
-                                        <constraint firstAttribute="bottom" secondItem="UfV-4n-CdN" secondAttribute="bottom" constant="116" id="vqZ-39-XNF"/>
+                                        <constraint firstAttribute="bottom" secondItem="UfV-4n-CdN" secondAttribute="bottom" constant="95" id="1uY-dw-AMe"/>
+                                        <constraint firstItem="zzr-Pz-Pvc" firstAttribute="top" secondItem="7Dq-Uv-XFN" secondAttribute="top" constant="50" id="Bfz-ok-eA6"/>
+                                        <constraint firstAttribute="bottom" secondItem="apn-l8-lVI" secondAttribute="bottom" constant="44" id="Ie9-X7-YDZ"/>
+                                        <constraint firstItem="apn-l8-lVI" firstAttribute="leading" secondItem="7Dq-Uv-XFN" secondAttribute="leading" constant="13" id="MN9-7I-hYB"/>
+                                        <constraint firstItem="UfV-4n-CdN" firstAttribute="top" secondItem="7Dq-Uv-XFN" secondAttribute="top" constant="91" id="RaS-KW-rGF"/>
+                                        <constraint firstItem="Zc3-Wa-TEP" firstAttribute="top" secondItem="7Dq-Uv-XFN" secondAttribute="top" constant="50" id="c8D-ti-M0S"/>
+                                        <constraint firstItem="UfV-4n-CdN" firstAttribute="leading" secondItem="7Dq-Uv-XFN" secondAttribute="leading" id="cFi-OH-PCV"/>
+                                        <constraint firstAttribute="centerX" secondItem="UfV-4n-CdN" secondAttribute="centerX" id="fis-yJ-2ur"/>
+                                        <constraint firstAttribute="bottom" secondItem="nS4-rd-qtd" secondAttribute="bottom" constant="35" id="hol-WX-yIC"/>
+                                        <constraint firstItem="Zc3-Wa-TEP" firstAttribute="leading" secondItem="7Dq-Uv-XFN" secondAttribute="leading" constant="13" id="mEr-nB-cSX"/>
+                                        <constraint firstAttribute="trailing" secondItem="nS4-rd-qtd" secondAttribute="trailing" constant="16" id="nml-iC-Tpg"/>
+                                        <constraint firstAttribute="trailing" secondItem="zzr-Pz-Pvc" secondAttribute="trailing" constant="16" id="oqv-8C-zOZ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -213,7 +213,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bDV-KE-ROt" customClass="PFImageView">
                                 <rect key="frame" x="0.0" y="140" width="600" height="320"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEG-1N-udd">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEG-1N-udd" customClass="GlowingButton" customModule="Wat_Next" customModuleProvider="target">
                                 <rect key="frame" x="254" y="516" width="93" height="84"/>
                                 <fontDescription key="fontDescription" name="Angelface" family="Angelface" pointSize="60"/>
                                 <state key="normal" title="Next!">
@@ -246,6 +246,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="bDV-KE-ROt" id="NXF-xP-GTn"/>
+                        <outlet property="nextButton" destination="GEG-1N-udd" id="Rxi-A9-nOA"/>
                         <outlet property="venueName" destination="yoZ-XZ-B77" id="FmE-da-aj3"/>
                     </connections>
                 </viewController>
