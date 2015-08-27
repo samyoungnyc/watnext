@@ -11,7 +11,7 @@ import QuartzCore
 
 class SelectViewController: UIViewController {
     
-
+    
     
     @IBOutlet weak var venueName: UILabel!
     
@@ -22,7 +22,7 @@ class SelectViewController: UIViewController {
     var currentVenue: Venue?
     
     @IBAction func backTapped(sender: UIBarButtonItem) {
-
+        
         self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
         
     }
@@ -33,18 +33,26 @@ class SelectViewController: UIViewController {
         var nextPushed = "fromSelectVC"
         defaults.setObject("nextPushed", forKey: "nextPushed")
         
+        
+        
         // Create FeedItem
         var feedItem = FeedItem()
         if let currentVenue = currentVenue {
+            let user = PFUser.currentUser()
             feedItem.venueName = currentVenue.venueName
             feedItem.imageFile = currentVenue.lgImg
             feedItem.location = currentVenue.venueLocation
-            println(feedItem.location)
-            feedItem.userName = PFUser.currentUser()!.username!
-            feedItem.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
-                self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+            feedItem.userName = user!.username!
+            // add user feedCHoice tracking
+            user!.param.append(feedItem.venueName)
+            user!.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
+                println(user?.objectForKey("feedChoice"))
             })
+            
         }
+        feedItem.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
+            self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+        })
     }
     
     override func viewDidLoad() {
@@ -55,18 +63,18 @@ class SelectViewController: UIViewController {
         nav?.barStyle = UIBarStyle.Black
         
         // MARK: Navigation Image Setup
-        let navImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 80, height: 45))
-        navImageView.contentMode = .ScaleAspectFit
+        let navImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 165, height: 45))
+        //        imageView.contentMode = .ScaleAspectFill
         let navImage = UIImage(named: "navlogo")
         navImageView.image = navImage
         navigationItem.titleView = navImageView
         
         // Set Glow Animation on Next Button
         
-        nextButton.startGlowWithCGColor(UIColor.blueColor().CGColor)
+        nextButton.startGlowWithCGColor(UIColor.yellowColor().CGColor)
         
         // Set Fonts
-        venueName.font = UIFont(name: "Angelface", size: 40)
+        venueName.font = UIFont.boldSystemFontOfSize(17.0)
         
         if let currentVenue = currentVenue {
             venueName.text = currentVenue.venueName
@@ -78,7 +86,22 @@ class SelectViewController: UIViewController {
             })
         }
     }
+}
 
+// this extension makes it possible to cast 'feedChoice' either as a String or as an empty array, depending on if it is nil
+extension PFUser {
+    var param: [String] {
+        get {
+            if let x = self["feedChoice"] as? [String] {
+                return x
+            } else {
+                return []
+            }
+        }
+        set(val) {
+            self["feedChoice"] = val
+        }
+    }
 }
 
 

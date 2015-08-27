@@ -85,7 +85,7 @@ class FeedViewController: UITableViewController, CLLocationManagerDelegate {
         
         // MARK: Navigation Image Setup
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 80, height: 45))
-        imageView.contentMode = .ScaleAspectFit
+        imageView.contentMode = .ScaleAspectFill
         let image = UIImage(named: "navlogo")
         imageView.image = image
         navigationItem.titleView = imageView

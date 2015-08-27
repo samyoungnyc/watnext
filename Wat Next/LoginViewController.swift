@@ -12,10 +12,10 @@ class LoginViewController: UITabBarController, PFLogInViewControllerDelegate, PF
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.delegate = self
-
+        //        self.delegate = self
+        
     }
-   
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         screenSetup()
@@ -88,14 +88,14 @@ class LoginViewController: UITabBarController, PFLogInViewControllerDelegate, PF
             loginViewController.logInView!.logo = nil
             loginViewController.logInView!.addSubview(logoView)
             
-            // Customize login and sign up buttons
+            // Customize login and sign up buttons in Login
             
             loginViewController.logInView!.logInButton!.setBackgroundImage(UIImage(named: "black.png"), forState: UIControlState.Normal)
             
             loginViewController.logInView!.logInButton!.titleLabel?.font = UIFont(name: "Angelface", size: 60)
             
             loginViewController.logInView!.signUpButton!.setBackgroundImage(UIImage(named: "black.png"), forState: UIControlState.Normal)
-        
+            
             loginViewController.logInView!.signUpButton!.titleLabel?.font = UIFont(name: "Angelface", size: 60)
             
             loginViewController.logInView!.usernameField?.backgroundColor = UIColor.blackColor()
@@ -103,6 +103,18 @@ class LoginViewController: UITabBarController, PFLogInViewControllerDelegate, PF
             
             loginViewController.logInView!.passwordField?.backgroundColor = UIColor.blackColor()
             loginViewController.logInView!.passwordField?.textColor = UIColor.whiteColor()
+            
+            loginViewController.logInView!.logInButton!.layer.shadowColor = color.CGColor
+            loginViewController.logInView!.logInButton!.layer.shadowRadius = 4.0
+            loginViewController.logInView!.logInButton!.layer.shadowOpacity = 0.9
+            loginViewController.logInView!.logInButton!.layer.shadowOffset = CGSizeZero
+            loginViewController.logInView!.logInButton!.layer.masksToBounds = false
+            
+            loginViewController.logInView!.signUpButton!.layer.shadowColor = color.CGColor
+            loginViewController.logInView!.signUpButton!.layer.shadowRadius = 4.0
+            loginViewController.logInView!.signUpButton!.layer.shadowOpacity = 0.9
+            loginViewController.logInView!.signUpButton!.layer.shadowOffset = CGSizeZero
+            loginViewController.logInView!.signUpButton!.layer.masksToBounds = false
             
             loginViewController.logInView!.passwordForgottenButton?.setTitleColor(UIColor.whiteColor(), forState: .Normal)
             
@@ -126,6 +138,29 @@ class LoginViewController: UITabBarController, PFLogInViewControllerDelegate, PF
             signupViewController.signUpView?.addSubview(signupLogoView)
             
             signupViewController.signUpView?.signUpButton!.titleLabel?.font = UIFont(name: "Angelface", size: 60)
+            
+            // Customize signUpView
+            
+            signupViewController.signUpView!.backgroundColor = UIColor.blackColor()
+            signupViewController.signUpView!.usernameField?.backgroundColor = UIColor.blackColor()
+            signupViewController.signUpView!.usernameField?.textColor = UIColor.whiteColor()
+            
+            signupViewController.signUpView!.passwordField?.backgroundColor = UIColor.blackColor()
+            signupViewController.signUpView!.passwordField?.textColor = UIColor.whiteColor()
+            
+            signupViewController.signUpView!.emailField?.backgroundColor = UIColor.blackColor()
+            signupViewController.signUpView!.emailField?.textColor = UIColor.whiteColor()
+            
+            signupViewController.signUpView!.signUpButton!.setBackgroundImage(UIImage(named: "black.png"), forState: UIControlState.Normal)
+            
+            signupViewController.signUpView!.signUpButton!.titleLabel?.font = UIFont(name: "Angelface", size: 60)
+            
+            signupViewController.signUpView!.signUpButton!.layer.shadowColor = color.CGColor
+            signupViewController.signUpView!.signUpButton!.layer.shadowRadius = 4.0
+            signupViewController.signUpView!.signUpButton!.layer.shadowOpacity = 0.9
+            signupViewController.signUpView!.signUpButton!.layer.shadowOffset = CGSizeZero
+            signupViewController.signUpView!.signUpButton!.layer.masksToBounds = false
+            
             
             self.presentViewController(loginViewController, animated: true, completion: nil)
         }

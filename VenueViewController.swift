@@ -33,7 +33,7 @@ class VenueViewController: UICollectionViewController, UICollectionViewDelegate,
         var nav = self.navigationController?.navigationBar
         nav?.barStyle = UIBarStyle.Black
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 80, height: 45))
-        imageView.contentMode = .ScaleAspectFit
+        imageView.contentMode = .ScaleAspectFill
         let image = UIImage(named: "navlogo")
         imageView.image = image
         navigationItem.titleView = imageView
