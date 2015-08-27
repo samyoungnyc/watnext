@@ -30,13 +30,13 @@ class SelectViewController: UIViewController {
     @IBAction func nextTapped(sender: UIButton) {
         // Set defaults for segueing in next View
         let defaults = NSUserDefaults.standardUserDefaults()
-        var nextPushed = "fromSelectVC"
+        _ = "fromSelectVC"
         defaults.setObject("nextPushed", forKey: "nextPushed")
         
         
         
         // Create FeedItem
-        var feedItem = FeedItem()
+        let feedItem = FeedItem()
         if let currentVenue = currentVenue {
             let user = PFUser.currentUser()
             feedItem.venueName = currentVenue.venueName
@@ -46,7 +46,7 @@ class SelectViewController: UIViewController {
             // add user feedCHoice tracking
             user!.param.append(feedItem.venueName)
             user!.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
-                println(user?.objectForKey("feedChoice"))
+                print(user?.objectForKey("feedChoice"))
             })
             
         }
@@ -59,7 +59,7 @@ class SelectViewController: UIViewController {
         super.viewDidLoad()
         
         // MARK: NavBar Styling
-        var nav = self.navigationController?.navigationBar
+        let nav = self.navigationController?.navigationBar
         nav?.barStyle = UIBarStyle.Black
         
         // MARK: Navigation Image Setup

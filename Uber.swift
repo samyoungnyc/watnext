@@ -52,8 +52,8 @@ class Uber {
     // -------------------------------------------------------------------
     func deepLink() {
         if let uberURL = self.constructURL() {
-            var sharedApp = UIApplication.sharedApplication()
-            println(uberURL)
+            let sharedApp = UIApplication.sharedApplication()
+            print(uberURL)
             sharedApp.openURL(uberURL)
         }
     }
@@ -96,7 +96,7 @@ class Uber {
     // check if the Uber App is installed on the device
     // -------------------------------------------------------------------
     class func isUberAppInstalled() -> Bool {
-        var sharedApp = UIApplication.sharedApplication()
+        let sharedApp = UIApplication.sharedApplication()
         let uberProtocol = NSURL(string: "uber://")
         
         return sharedApp.canOpenURL(uberProtocol!)

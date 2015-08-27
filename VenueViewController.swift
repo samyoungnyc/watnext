@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VenueViewController: UICollectionViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class VenueViewController: UICollectionViewController {
     var venueItems: [Venue] = []
     
     func fetchItems() {
@@ -21,7 +21,7 @@ class VenueViewController: UICollectionViewController, UICollectionViewDelegate,
                     self.venueItems.append(object as! Venue)
                 }
             } else {
-                println("Error %@ %@", error, error!.userInfo!)
+                print("Error %@ %@", error, error!.userInfo)
             }
             self.collectionView?.reloadData()
         })
@@ -30,7 +30,7 @@ class VenueViewController: UICollectionViewController, UICollectionViewDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         // MARK: NavBar Styling
-        var nav = self.navigationController?.navigationBar
+        let nav = self.navigationController?.navigationBar
         nav?.barStyle = UIBarStyle.Black
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 80, height: 45))
         imageView.contentMode = .ScaleAspectFill
@@ -47,10 +47,10 @@ class VenueViewController: UICollectionViewController, UICollectionViewDelegate,
         
         let defaults = NSUserDefaults.standardUserDefaults()
         
-        if let defaultString = defaults.stringForKey("nextPushed") {
+        if let _ = defaults.stringForKey("nextPushed") {
             performSegueWithIdentifier("tab0", sender: self)
             } else {
-            println("default reset to nil in FeedView")
+            print("default reset to nil in FeedView")
         }
     }
     
@@ -64,8 +64,8 @@ class VenueViewController: UICollectionViewController, UICollectionViewDelegate,
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexpath: NSIndexPath) -> CGSize {
-        var screenWidth = CGRectGetWidth(collectionView.bounds)
-        var cellWidth = screenWidth/3.0
+        let screenWidth = CGRectGetWidth(collectionView.bounds)
+        let cellWidth = screenWidth/3.0
         return CGSize(width: cellWidth, height: cellWidth)
     }
     

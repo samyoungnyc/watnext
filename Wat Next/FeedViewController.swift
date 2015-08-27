@@ -4,7 +4,6 @@
 
 import UIKit
 import CoreLocation
-import MapKit
 
 class FeedViewController: UITableViewController, CLLocationManagerDelegate {
     var feedItems: [FeedItem] = []
@@ -29,7 +28,7 @@ class FeedViewController: UITableViewController, CLLocationManagerDelegate {
                     }
                 }
             } else {
-                println("Error with getAndShowFeedItems query")
+                print("Error with getAndShowFeedItems query")
             }
             self.tableView.reloadData()
             self.refreshControl?.endRefreshing()
@@ -72,12 +71,12 @@ class FeedViewController: UITableViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         
         // MARK: Set up Pull-To-Refresh
-        var refreshControl = UIRefreshControl()
+        let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: Selector("getAndShowFeedItems"), forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = refreshControl
         
         // MARK: NavBar Styling
-        var nav = self.navigationController?.navigationBar
+        let nav = self.navigationController?.navigationBar
         nav?.barStyle = UIBarStyle.BlackTranslucent
         
         // Turn off TableView Selection
@@ -130,7 +129,7 @@ class FeedViewController: UITableViewController, CLLocationManagerDelegate {
         
         // MARK: Setup image for cell
         cell.venueImage?.image = UIImage(named: "1.png")
-        var image = currentItem.imageFile
+        let image = currentItem.imageFile
         image.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
             if !(error != nil) {
                 cell.venueImage?.image = UIImage(data: imageData!)

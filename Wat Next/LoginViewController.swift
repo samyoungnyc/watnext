@@ -36,7 +36,7 @@ class LoginViewController: UITabBarController, PFLogInViewControllerDelegate, PF
     }
     
     func logInViewController(logInController: PFLogInViewController, didFailToLogInWithError error: NSError?) {
-        print("failed to login")
+        print("failed to login", terminator: "")
     }
     
     // MARK: Parse Sign Up
@@ -46,11 +46,11 @@ class LoginViewController: UITabBarController, PFLogInViewControllerDelegate, PF
     }
     
     func signUpViewController(signUpController: PFSignUpViewController, didFailToSignUpWithError error: NSError?) {
-        print("sign up failed")
+        print("sign up failed", terminator: "")
     }
     
     func signUpViewControllerDidCancelSignUp(signUpController: PFSignUpViewController) {
-        print("user dismissed sign up")
+        print("user dismissed sign up", terminator: "")
     }
     
     func screenSetup() {
@@ -64,7 +64,7 @@ class LoginViewController: UITabBarController, PFLogInViewControllerDelegate, PF
             // 'signUpController' is a child of loginView, so here it's declared
             loginViewController.signUpController = signupViewController
             
-            loginViewController.fields = (PFLogInFields.UsernameAndPassword | PFLogInFields.LogInButton | PFLogInFields.SignUpButton | PFLogInFields.PasswordForgotten | PFLogInFields.DismissButton)
+            loginViewController.fields = ([PFLogInFields.UsernameAndPassword, PFLogInFields.LogInButton, PFLogInFields.SignUpButton, PFLogInFields.PasswordForgotten, PFLogInFields.DismissButton])
             
             // MARK: Login Customization
             

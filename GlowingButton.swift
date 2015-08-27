@@ -27,8 +27,7 @@ class GlowingButton: UIButton {
         self.layer.masksToBounds = false
         
         // Autoreverse, Repeat and allow user interaction.
-        UIView.animateWithDuration(0.7, delay: 0, options: UIViewAnimationOptions.Autoreverse |                                                         UIViewAnimationOptions.CurveEaseInOut | UIViewAnimationOptions.Repeat
-            | UIViewAnimationOptions.AllowUserInteraction,
+        UIView.animateWithDuration(0.7, delay: 0, options: [UIViewAnimationOptions.Autoreverse, UIViewAnimationOptions.CurveEaseInOut, UIViewAnimationOptions.Repeat, UIViewAnimationOptions.AllowUserInteraction],
             animations: { () -> Void in
                 // Make it a 15% bigger
                 self.transform = CGAffineTransformMakeScale(1.4, 1.4)
