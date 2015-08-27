@@ -63,10 +63,10 @@ class SelectViewController: UIViewController {
         
         // Set Glow Animation on Next Button
         
-        nextButton.startGlowWithCGColor(UIColor.yellowColor().CGColor)
+        nextButton.startGlowWithCGColor(UIColor.blueColor().CGColor)
         
         // Set Fonts
-        venueName.font = UIFont.boldSystemFontOfSize(17.0)
+        venueName.font = UIFont(name: "Angelface", size: 40)
         
         if let currentVenue = currentVenue {
             venueName.text = currentVenue.venueName

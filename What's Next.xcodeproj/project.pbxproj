@@ -242,9 +242,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2B5F3EB71B7A899600E10F89 /* Wat Next */ = {
+		2B5F3EB71B7A899600E10F89 /* What's Next */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2B5F3ED71B7A899600E10F89 /* Build configuration list for PBXNativeTarget "Wat Next" */;
+			buildConfigurationList = 2B5F3ED71B7A899600E10F89 /* Build configuration list for PBXNativeTarget "What's Next" */;
 			buildPhases = (
 				2B5F3EB41B7A899600E10F89 /* Sources */,
 				2B5F3EB51B7A899600E10F89 /* Frameworks */,
@@ -254,14 +254,14 @@
 			);
 			dependencies = (
 			);
-			name = "Wat Next";
+			name = "What's Next";
 			productName = "Wat Next";
 			productReference = 2B5F3EB81B7A899600E10F89 /* Wat Next.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2B5F3ECC1B7A899600E10F89 /* Wat NextTests */ = {
+		2B5F3ECC1B7A899600E10F89 /* What's NextTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2B5F3EDA1B7A899600E10F89 /* Build configuration list for PBXNativeTarget "Wat NextTests" */;
+			buildConfigurationList = 2B5F3EDA1B7A899600E10F89 /* Build configuration list for PBXNativeTarget "What's NextTests" */;
 			buildPhases = (
 				2B5F3EC91B7A899600E10F89 /* Sources */,
 				2B5F3ECA1B7A899600E10F89 /* Frameworks */,
@@ -272,7 +272,7 @@
 			dependencies = (
 				2B5F3ECF1B7A899600E10F89 /* PBXTargetDependency */,
 			);
-			name = "Wat NextTests";
+			name = "What's NextTests";
 			productName = "Wat NextTests";
 			productReference = 2B5F3ECD1B7A899600E10F89 /* Wat NextTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -304,7 +304,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2B5F3EB31B7A899600E10F89 /* Build configuration list for PBXProject "Wat Next" */;
+			buildConfigurationList = 2B5F3EB31B7A899600E10F89 /* Build configuration list for PBXProject "What's Next" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -317,8 +317,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2B5F3EB71B7A899600E10F89 /* Wat Next */,
-				2B5F3ECC1B7A899600E10F89 /* Wat NextTests */,
+				2B5F3EB71B7A899600E10F89 /* What's Next */,
+				2B5F3ECC1B7A899600E10F89 /* What's NextTests */,
 			);
 		};
 /* End PBXProject section */
@@ -377,7 +377,7 @@
 /* Begin PBXTargetDependency section */
 		2B5F3ECF1B7A899600E10F89 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2B5F3EB71B7A899600E10F89 /* Wat Next */;
+			target = 2B5F3EB71B7A899600E10F89 /* What's Next */;
 			targetProxy = 2B5F3ECE1B7A899600E10F89 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -531,7 +531,7 @@
 				INFOPLIST_FILE = "Wat NextTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wat Next.app/Wat Next";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/What's Next.app/What's Next";
 			};
 			name = Debug;
 		};
@@ -546,14 +546,14 @@
 				INFOPLIST_FILE = "Wat NextTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wat Next.app/Wat Next";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/What's Next.app/What's Next";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2B5F3EB31B7A899600E10F89 /* Build configuration list for PBXProject "Wat Next" */ = {
+		2B5F3EB31B7A899600E10F89 /* Build configuration list for PBXProject "What's Next" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B5F3ED51B7A899600E10F89 /* Debug */,
@@ -562,7 +562,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2B5F3ED71B7A899600E10F89 /* Build configuration list for PBXNativeTarget "Wat Next" */ = {
+		2B5F3ED71B7A899600E10F89 /* Build configuration list for PBXNativeTarget "What's Next" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B5F3ED81B7A899600E10F89 /* Debug */,
@@ -571,7 +571,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2B5F3EDA1B7A899600E10F89 /* Build configuration list for PBXNativeTarget "Wat NextTests" */ = {
+		2B5F3EDA1B7A899600E10F89 /* Build configuration list for PBXNativeTarget "What's NextTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B5F3EDB1B7A899600E10F89 /* Debug */,
