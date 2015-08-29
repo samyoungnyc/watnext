@@ -8,8 +8,10 @@
 
 import UIKit
 
-class VenueViewController: UICollectionViewController {
+class VenueViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate {
     var venueItems: [Venue] = []
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     
     func fetchItems() {
         venueItems.removeAll(keepCapacity: false)
@@ -55,12 +57,12 @@ class VenueViewController: UICollectionViewController {
         }
     }
     
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
     
     
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return venueItems.count
     }
     
@@ -76,7 +78,7 @@ class VenueViewController: UICollectionViewController {
             return 0
     }
     
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("venueCell", forIndexPath: indexPath) as! VenueItemCell
         let currentItem = venueItems[indexPath.row]
         let imageView = PFImageView()
@@ -89,7 +91,7 @@ class VenueViewController: UICollectionViewController {
         return cell
     }
     
-    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
     
         let selectNavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("selectNavController") as! UINavigationController
         let selectVC = selectNavigationController.topViewController as! SelectViewController

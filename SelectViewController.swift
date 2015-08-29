@@ -37,7 +37,7 @@ class SelectViewController: UIViewController {
             let user = PFUser.currentUser()
             feedItem.venueName = currentVenue.venueName
             feedItem.imageFile = currentVenue.lgImg
-            feedItem.location = currentVenue.venueLocation
+//            feedItem.location = currentVenue.venueLocation
             feedItem.userName = user!.username!
         
         feedItem.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
