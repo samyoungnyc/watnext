@@ -40,8 +40,9 @@ class VenueViewController: UICollectionViewController {
         
         // Fetch Venues for VenueCollectionView
         fetchItems()
+        
     }
-    
+        
     override func viewDidAppear(animated: Bool) {
         // Defaults for segueing
         

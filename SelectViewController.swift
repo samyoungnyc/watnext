@@ -33,8 +33,6 @@ class SelectViewController: UIViewController {
         _ = "fromSelectVC"
         defaults.setObject("nextPushed", forKey: "nextPushed")
         
-        
-        
         // Create FeedItem
         let feedItem = FeedItem()
         if let currentVenue = currentVenue {
@@ -43,18 +41,12 @@ class SelectViewController: UIViewController {
             feedItem.imageFile = currentVenue.lgImg
             feedItem.location = currentVenue.venueLocation
             feedItem.userName = user!.username!
-            // add user feedCHoice tracking
-            user!.param.append(feedItem.venueName)
-            user!.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
-                print(user?.objectForKey("feedChoice"))
-            })
-            
-        }
+        
         feedItem.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
             self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
         })
     }
-    
+}
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -87,21 +79,3 @@ class SelectViewController: UIViewController {
         }
     }
 }
-
-// this extension makes it possible to cast 'feedChoice' either as a String or as an empty array, depending on if it is nil
-extension PFUser {
-    var param: [String] {
-        get {
-            if let x = self["feedChoice"] as? [String] {
-                return x
-            } else {
-                return []
-            }
-        }
-        set(val) {
-            self["feedChoice"] = val
-        }
-    }
-}
-
-

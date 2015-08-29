@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             FeedItem.registerSubclass()
             
             // [Optional] Track statistics around application opens.
-//            PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+            PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
         return true
     }

@@ -7,6 +7,7 @@ import CoreLocation
 
 class FeedViewController: UITableViewController, CLLocationManagerDelegate {
     var feedItems: [FeedItem] = []
+
     
 //    let locationManager = CLLocationManager()
 //    var location: CLLocation?
@@ -33,7 +34,13 @@ class FeedViewController: UITableViewController, CLLocationManagerDelegate {
             self.tableView.reloadData()
             self.refreshControl?.endRefreshing()
             self.resetUserDefaults()
+            self.scrollToFirstRow()
         }
+    }
+    
+    func scrollToFirstRow() {
+        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+        self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
     }
     
     func resetUserDefaults() {
@@ -88,7 +95,7 @@ class FeedViewController: UITableViewController, CLLocationManagerDelegate {
         let image = UIImage(named: "navlogo")
         imageView.image = image
         navigationItem.titleView = imageView
-    
+        
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -143,7 +150,8 @@ class FeedViewController: UITableViewController, CLLocationManagerDelegate {
 //        cell.uberButton.addTarget(self, action: "uberButtonPressed:", forControlEvents: .TouchUpInside)
         return cell
     }
-    
+}
+
     //MARK: Delegate methods for CLLocationManager
     
 //    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
@@ -161,7 +169,6 @@ class FeedViewController: UITableViewController, CLLocationManagerDelegate {
 //    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
 //        println("error: \(error)")
 //    }
-}
 
 //extension PFGeoPoint {
 //    public var iosLocation: CLLocationCoordinate2D {
