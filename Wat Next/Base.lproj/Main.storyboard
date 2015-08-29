@@ -45,7 +45,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="466" id="x2C-o3-ug4" customClass="FeedViewCell" customModule="What_s_Next" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="86" width="600" height="466"/>
+                                <rect key="frame" x="0.0" y="22" width="600" height="466"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x2C-o3-ug4" id="7Dq-Uv-XFN">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="465"/>
@@ -72,12 +72,6 @@
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nS4-rd-qtd">
-                                            <rect key="frame" x="550" y="400" width="34" height="30"/>
-                                            <state key="normal" title="Uber">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -92,15 +86,9 @@
                                         <constraint firstItem="Zc3-Wa-TEP" firstAttribute="leading" secondItem="7Dq-Uv-XFN" secondAttribute="leading" constant="13" id="mEr-nB-cSX"/>
                                         <constraint firstAttribute="trailing" secondItem="zzr-Pz-Pvc" secondAttribute="trailing" constant="16" id="oqv-8C-zOZ"/>
                                     </constraints>
-                                    <variation key="default">
-                                        <mask key="subviews">
-                                            <exclude reference="nS4-rd-qtd"/>
-                                        </mask>
-                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="timeStamp" destination="zzr-Pz-Pvc" id="mq2-MN-7Hu"/>
-                                    <outlet property="uberButton" destination="nS4-rd-qtd" id="7or-5C-nli"/>
                                     <outlet property="userName" destination="Zc3-Wa-TEP" id="NW5-0c-Kvx"/>
                                     <outlet property="venueImage" destination="UfV-4n-CdN" id="Cy1-rF-GB6"/>
                                     <outlet property="venueName" destination="apn-l8-lVI" id="rhA-Qf-AAP"/>
@@ -293,6 +281,6 @@
         <image name="seeTab" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3jb-l3-5WJ"/>
+        <segue reference="J2c-jQ-Fhm"/>
     </inferredMetricsTieBreakers>
 </document>

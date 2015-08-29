@@ -11,9 +11,7 @@ import UIKit
 class LoginViewController: UITabBarController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        //        self.delegate = self
-        
+        super.viewDidLoad()        
     }
     
     override func viewDidAppear(animated: Bool) {

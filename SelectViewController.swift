@@ -11,8 +11,6 @@ import QuartzCore
 
 class SelectViewController: UIViewController {
     
-    
-    
     @IBOutlet weak var venueName: UILabel!
     
     @IBOutlet weak var imageView: PFImageView!
@@ -56,7 +54,7 @@ class SelectViewController: UIViewController {
         
         // MARK: Navigation Image Setup
         let navImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 165, height: 45))
-        //        imageView.contentMode = .ScaleAspectFill
+        imageView.contentMode = .ScaleAspectFill
         let navImage = UIImage(named: "navlogo")
         navImageView.image = navImage
         navigationItem.titleView = navImageView

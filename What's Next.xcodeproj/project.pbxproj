@@ -27,7 +27,6 @@
 		2B5F3EFB1B7A8AA600E10F89 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B5F3EFA1B7A8AA600E10F89 /* Social.framework */; };
 		2B5F3F021B7A921B00E10F89 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3F011B7A921B00E10F89 /* FeedViewController.swift */; };
 		2B5F3F041B7A928900E10F89 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3F031B7A928900E10F89 /* LoginViewController.swift */; };
-		2B5F3F091B7BB4FD00E10F89 /* Uber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3F081B7BB4FD00E10F89 /* Uber.swift */; };
 		2B5F3F0B1B7BB5EB00E10F89 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3F0A1B7BB5EB00E10F89 /* FeedItem.swift */; };
 		2B5F3F0F1B7BB65200E10F89 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3F0E1B7BB65200E10F89 /* Venue.swift */; };
 		2B5F3F121B7BB78900E10F89 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B5F3F111B7BB78900E10F89 /* Images.xcassets */; };
@@ -76,7 +75,6 @@
 		2B5F3F011B7A921B00E10F89 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedViewController.swift; path = "Wat Next/FeedViewController.swift"; sourceTree = "<group>"; };
 		2B5F3F031B7A928900E10F89 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "Wat Next/LoginViewController.swift"; sourceTree = "<group>"; };
 		2B5F3F051B7A931500E10F89 /* Wat Next-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wat Next-Bridging-Header.h"; sourceTree = "<group>"; };
-		2B5F3F081B7BB4FD00E10F89 /* Uber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Uber.swift; sourceTree = "<group>"; };
 		2B5F3F0A1B7BB5EB00E10F89 /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		2B5F3F0E1B7BB65200E10F89 /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		2B5F3F111B7BB78900E10F89 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -210,7 +208,6 @@
 				2B99F2C51B88019500AFC30B /* JLTTabSegue.h */,
 				2B99F2C31B88018D00AFC30B /* JLTTabSegue.m */,
 				2B99F2C61B8D094C00AFC30B /* GlowingButton.swift */,
-				2B5F3F081B7BB4FD00E10F89 /* Uber.swift */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -353,7 +350,6 @@
 			files = (
 				2B99F2C21B7D1D8500AFC30B /* SelectViewController.swift in Sources */,
 				2B5F3F0F1B7BB65200E10F89 /* Venue.swift in Sources */,
-				2B5F3F091B7BB4FD00E10F89 /* Uber.swift in Sources */,
 				2B5F3F021B7A921B00E10F89 /* FeedViewController.swift in Sources */,
 				2B99F2C41B88018D00AFC30B /* JLTTabSegue.m in Sources */,
 				2B5F3F141B7BBB5D00E10F89 /* FeedViewCell.swift in Sources */,

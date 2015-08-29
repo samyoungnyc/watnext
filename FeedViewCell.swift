@@ -15,7 +15,6 @@ class FeedViewCell: UITableViewCell {
     @IBOutlet weak var timeStamp: UILabel!
     @IBOutlet weak var venueName: UILabel!
     @IBOutlet weak var venueImage: PFImageView!
-    @IBOutlet weak var uberButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
