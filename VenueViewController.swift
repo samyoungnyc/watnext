@@ -40,6 +40,12 @@ class VenueViewController: UIViewController, UICollectionViewDataSource, UIColle
         imageView.image = image
         navigationItem.titleView = imageView
         
+        // cell layout
+        let cellWidth = ((UIScreen.mainScreen().bounds.width) - 32 - 30 ) / 3
+        let cellLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        cellLayout.itemSize = CGSize(width: cellWidth, height: cellWidth)
+
+        
         // Fetch Venues for VenueCollectionView
         fetchItems()
         
@@ -66,11 +72,11 @@ class VenueViewController: UIViewController, UICollectionViewDataSource, UIColle
         return venueItems.count
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexpath: NSIndexPath) -> CGSize {
-        let screenWidth = CGRectGetWidth(collectionView.bounds)
-        let cellWidth = screenWidth/3.0
-        return CGSize(width: cellWidth, height: cellWidth)
-    }
+//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexpath: NSIndexPath) -> CGSize {
+//        let screenWidth = CGRectGetWidth(collectionView.bounds)
+//        let cellWidth = screenWidth/3.0
+//        return CGSize(width: cellWidth, height: cellWidth)
+//    }
     
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
