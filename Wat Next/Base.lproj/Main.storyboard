@@ -45,7 +45,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="466" id="x2C-o3-ug4" customClass="FeedViewCell" customModule="What_s_Next" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="86" width="600" height="466"/>
+                                <rect key="frame" x="0.0" y="22" width="600" height="466"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x2C-o3-ug4" id="7Dq-Uv-XFN">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="465"/>
@@ -206,6 +206,7 @@
                     <connections>
                         <outlet property="collectionView" destination="scO-ds-wIM" id="fMs-ma-Cga"/>
                         <outlet property="searchBar" destination="Mzm-UA-TgU" id="UtQ-lb-CRI"/>
+                        <segue destination="Rc1-tB-t10" kind="custom" identifier="tab0" customClass="JLTTabSegue" id="vte-WC-c5X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ekM-pI-Pxn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -300,4 +301,7 @@
         <image name="goTab" width="32" height="32"/>
         <image name="seeTab" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="vte-WC-c5X"/>
+    </inferredMetricsTieBreakers>
 </document>
