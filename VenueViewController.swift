@@ -55,7 +55,6 @@ class VenueViewController: UIViewController, UICollectionViewDataSource, UIColle
 //        }
 //    }
     
-    
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         print("search and found: \(venueItems.count) items")
