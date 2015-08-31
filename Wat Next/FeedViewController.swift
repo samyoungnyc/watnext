@@ -4,7 +4,7 @@
 
 import UIKit
 
-class FeedViewController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating {
+class FeedViewController: UITableViewController {
     var feedItems: [FeedItem] = []
     
     func getAndShowFeedItems() {
