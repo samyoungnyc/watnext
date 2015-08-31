@@ -39,13 +39,12 @@ class VenueViewController: UIViewController, UICollectionViewDataSource, UIColle
         let image = UIImage(named: "navlogo")
         imageView.image = image
         navigationItem.titleView = imageView
-        
-        // cell layout
-        let cellWidth = ((UIScreen.mainScreen().bounds.width) - 32 - 30 ) / 3
-        let cellLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        cellLayout.itemSize = CGSize(width: cellWidth, height: cellWidth)
 
-        
+//        let cellWidth = ((UIScreen.mainScreen().bounds.width)) / 3
+//        print(cellWidth)
+//        let cellLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+//        cellLayout.itemSize = CGSize(width: cellWidth, height: cellWidth)
+
         // Fetch Venues for VenueCollectionView
         fetchItems()
         
@@ -72,17 +71,17 @@ class VenueViewController: UIViewController, UICollectionViewDataSource, UIColle
         return venueItems.count
     }
     
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexpath: NSIndexPath) -> CGSize {
-//        let screenWidth = CGRectGetWidth(collectionView.bounds)
-//        let cellWidth = screenWidth/3.0
-//        return CGSize(width: cellWidth, height: cellWidth)
-//    }
-    
-    
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
-        minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
-            return 0
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexpath: NSIndexPath) -> CGSize {
+        let screenWidth = CGRectGetWidth(collectionView.bounds)
+        let cellWidth = screenWidth/3.0
+        return CGSize(width: cellWidth, height: cellWidth)
     }
+//
+////    
+//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+//        minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+//            return 0
+//    }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("venueCell", forIndexPath: indexPath) as! VenueItemCell
