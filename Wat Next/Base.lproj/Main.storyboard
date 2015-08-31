@@ -157,9 +157,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Mzm-UA-TgU">
+                            <searchBar contentMode="redraw" showsSearchResultsButton="YES" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mzm-UA-TgU">
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="scO-ds-wIM">
                                 <rect key="frame" x="0.0" y="108" width="600" height="510"/>
@@ -205,6 +205,7 @@
                     <navigationItem key="navigationItem" id="wf2-Le-E9y"/>
                     <connections>
                         <outlet property="collectionView" destination="scO-ds-wIM" id="fMs-ma-Cga"/>
+                        <outlet property="searchBar" destination="Mzm-UA-TgU" id="UtQ-lb-CRI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ekM-pI-Pxn" userLabel="First Responder" sceneMemberID="firstResponder"/>

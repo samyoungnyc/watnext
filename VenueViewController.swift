@@ -12,13 +12,19 @@ class VenueViewController: UIViewController, UICollectionViewDataSource, UIColle
     var venueItems: [Venue] = []
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    @IBOutlet weak var searchBar: UISearchBar!
+        
     func fetchItems() {
         venueItems.removeAll(keepCapacity: false)
         let prepItems = Venue.query()
         
+        if searchBar.text != "" {
+            prepItems?.whereKey("venueName", containsString: searchBar.text?.lowercaseString)
+        }
+        
         prepItems?.findObjectsInBackgroundWithBlock({ (objects:[AnyObject]?, error: NSError?) -> Void in
             if (error == nil) {
+                self.venueItems.removeAll(keepCapacity: true)
                 for object in objects! {
                     self.venueItems.append(object as! Venue)
                 }
@@ -27,6 +33,43 @@ class VenueViewController: UIViewController, UICollectionViewDataSource, UIColle
             }
             self.collectionView?.reloadData()
         })
+    }
+    
+//    func searchQuery() {
+//        let query = PFQuery(className: "Venue")
+//        
+//        if searchBar.text != "" {
+//            query.whereKey("venueName", containsString: searchBar.text?.lowercaseString)
+//        }
+//        
+//        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+//            if error == nil {
+//                self.venueItems.removeAll(keepCapacity: true)
+//                
+//                if let objects = objects as? [Venue] {
+//                    self.venueItems = Array(objects.generate())
+//                }
+//                
+//                self.collectionView.reloadData()
+//            }
+//        }
+//    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        print("search and found: \(venueItems.count) items")
+
+        self.fetchItems()
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        // clear search criteria
+        searchBar.text = ""
+        
+        searchBar.resignFirstResponder()
+        self.fetchItems()
+
+        
     }
     
     override func viewDidLoad() {
@@ -39,6 +82,10 @@ class VenueViewController: UIViewController, UICollectionViewDataSource, UIColle
         let image = UIImage(named: "navlogo")
         imageView.image = image
         navigationItem.titleView = imageView
+        
+        //serach bar delegate
+        searchBar.delegate = self
+
 
 //        let cellWidth = ((UIScreen.mainScreen().bounds.width)) / 3
 //        print(cellWidth)
@@ -46,11 +93,15 @@ class VenueViewController: UIViewController, UICollectionViewDataSource, UIColle
 //        cellLayout.itemSize = CGSize(width: cellWidth, height: cellWidth)
 
         // Fetch Venues for VenueCollectionView
-        fetchItems()
         
     }
         
     override func viewDidAppear(animated: Bool) {
+        
+        fetchItems()
+        
+//        searchQuery()
+
         // Defaults for segueing
         
         let defaults = NSUserDefaults.standardUserDefaults()
