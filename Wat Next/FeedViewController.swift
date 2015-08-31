@@ -4,7 +4,7 @@
 
 import UIKit
 
-class FeedViewController: UITableViewController {
+class FeedViewController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating {
     var feedItems: [FeedItem] = []
     
     func getAndShowFeedItems() {
@@ -41,7 +41,7 @@ class FeedViewController: UITableViewController {
         defaults.setObject(nil, forKey: "nextPushed")
         defaults.synchronize()
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,7 +63,7 @@ class FeedViewController: UITableViewController {
         let image = UIImage(named: "navlogo")
         imageView.image = image
         navigationItem.titleView = imageView
-        
+                
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)

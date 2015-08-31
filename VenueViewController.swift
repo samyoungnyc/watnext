@@ -10,6 +10,8 @@ import UIKit
 
 class VenueViewController: UICollectionViewController {
     var venueItems: [Venue] = []
+    var searchController: UISearchController!
+
     
     func fetchItems() {
         venueItems.removeAll(keepCapacity: false)
@@ -42,7 +44,7 @@ class VenueViewController: UICollectionViewController {
         fetchItems()
         
     }
-        
+    
     override func viewDidAppear(animated: Bool) {
         // Defaults for segueing
         
