@@ -85,10 +85,10 @@ class VenueViewController: UIViewController, UICollectionViewDataSource, UIColle
         searchBar.delegate = self
 
 
-//        let cellWidth = ((UIScreen.mainScreen().bounds.width)) / 3
-//        print(cellWidth)
-//        let cellLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-//        cellLayout.itemSize = CGSize(width: cellWidth, height: cellWidth)
+        let cellWidth = ((UIScreen.mainScreen().bounds.width)) / 3
+        print(cellWidth) // this prints to 125, which is the size I want
+        let cellLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        cellLayout.itemSize = CGSize(width: cellWidth, height: cellWidth)
 
         // Fetch Venues for VenueCollectionView
         
@@ -120,13 +120,13 @@ class VenueViewController: UIViewController, UICollectionViewDataSource, UIColle
         return venueItems.count
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexpath: NSIndexPath) -> CGSize {
-        let screenWidth = CGRectGetWidth(collectionView.bounds)
-        let cellWidth = screenWidth/3.0
-        return CGSize(width: cellWidth, height: cellWidth)
-    }
+//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexpath: NSIndexPath) -> CGSize {
+//        let screenWidth = CGRectGetWidth(collectionView.bounds)
+//        let cellWidth = screenWidth/3.0
+//        return CGSize(width: cellWidth, height: cellWidth)
+//    }
 //
-////    
+
 //    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
 //        minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
 //            return 0
