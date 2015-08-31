@@ -67,9 +67,7 @@ class VenueViewController: UIViewController, UICollectionViewDataSource, UIColle
         searchBar.text = ""
         
         searchBar.resignFirstResponder()
-        self.fetchItems()
-
-        
+        self.fetchItems()        
     }
     
     override func viewDidLoad() {
