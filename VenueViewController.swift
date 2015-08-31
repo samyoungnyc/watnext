@@ -13,7 +13,7 @@ class VenueViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
-        
+    
     func fetchItems() {
         venueItems.removeAll(keepCapacity: false)
         let prepItems = Venue.query()
@@ -35,30 +35,30 @@ class VenueViewController: UIViewController, UICollectionViewDataSource, UIColle
         })
     }
     
-//    func searchQuery() {
-//        let query = PFQuery(className: "Venue")
-//        
-//        if searchBar.text != "" {
-//            query.whereKey("venueName", containsString: searchBar.text?.lowercaseString)
-//        }
-//        
-//        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
-//            if error == nil {
-//                self.venueItems.removeAll(keepCapacity: true)
-//                
-//                if let objects = objects as? [Venue] {
-//                    self.venueItems = Array(objects.generate())
-//                }
-//                
-//                self.collectionView.reloadData()
-//            }
-//        }
-//    }
+    //    func searchQuery() {
+    //        let query = PFQuery(className: "Venue")
+    //
+    //        if searchBar.text != "" {
+    //            query.whereKey("venueName", containsString: searchBar.text?.lowercaseString)
+    //        }
+    //
+    //        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+    //            if error == nil {
+    //                self.venueItems.removeAll(keepCapacity: true)
+    //
+    //                if let objects = objects as? [Venue] {
+    //                    self.venueItems = Array(objects.generate())
+    //                }
+    //
+    //                self.collectionView.reloadData()
+    //            }
+    //        }
+    //    }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         print("search and found: \(venueItems.count) items")
-
+        
         self.fetchItems()
     }
     
@@ -83,30 +83,30 @@ class VenueViewController: UIViewController, UICollectionViewDataSource, UIColle
         
         //serach bar delegate
         searchBar.delegate = self
-
-
-        let cellWidth = ((UIScreen.mainScreen().bounds.width)) / 3
-        print(cellWidth) // this prints to 125, which is the size I want
-        let cellLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        cellLayout.itemSize = CGSize(width: cellWidth, height: cellWidth)
-
+        
+        
+        //        let cellWidth = ((UIScreen.mainScreen().bounds.width)) / 3
+        //        print(cellWidth)
+        //        let cellLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        //        cellLayout.itemSize = CGSize(width: cellWidth, height: cellWidth)
+        
         // Fetch Venues for VenueCollectionView
         
     }
-        
+    
     override func viewDidAppear(animated: Bool) {
         
         fetchItems()
         
-//        searchQuery()
-
+        //        searchQuery()
+        
         // Defaults for segueing
         
         let defaults = NSUserDefaults.standardUserDefaults()
         
         if let _ = defaults.stringForKey("nextPushed") {
             performSegueWithIdentifier("tab0", sender: self)
-            } else {
+        } else {
             print("default reset to nil in FeedView")
         }
     }
@@ -120,17 +120,17 @@ class VenueViewController: UIViewController, UICollectionViewDataSource, UIColle
         return venueItems.count
     }
     
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexpath: NSIndexPath) -> CGSize {
-//        let screenWidth = CGRectGetWidth(collectionView.bounds)
-//        let cellWidth = screenWidth/3.0
-//        return CGSize(width: cellWidth, height: cellWidth)
-//    }
-//
-
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
-//        minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
-//            return 0
-//    }
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexpath: NSIndexPath) -> CGSize {
+        let screenWidth = CGRectGetWidth(collectionView.bounds)
+        let cellWidth = screenWidth/3.0
+        return CGSize(width: cellWidth, height: cellWidth)
+    }
+    //
+    ////
+    //    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+    //        minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+    //            return 0
+    //    }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("venueCell", forIndexPath: indexPath) as! VenueItemCell
@@ -146,11 +146,11 @@ class VenueViewController: UIViewController, UICollectionViewDataSource, UIColle
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-    
+        
         let selectNavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("selectNavController") as! UINavigationController
         let selectVC = selectNavigationController.topViewController as! SelectViewController
         selectVC.currentVenue = venueItems[indexPath.row]
-
+        
         presentViewController(selectNavigationController, animated: true, completion: nil)
     }
     
