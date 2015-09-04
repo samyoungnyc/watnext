@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B3E042E1B99F3E800B184FE /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3E042D1B99F3E800B184FE /* Reachability.m */; settings = {ASSET_TAGS = (); }; };
 		2B5F3EBE1B7A899600E10F89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3EBD1B7A899600E10F89 /* AppDelegate.swift */; };
 		2B5F3EC31B7A899600E10F89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B5F3EC11B7A899600E10F89 /* Main.storyboard */; };
 		2B5F3EC81B7A899600E10F89 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B5F3EC61B7A899600E10F89 /* LaunchScreen.xib */; };
@@ -50,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B3E042C1B99F3E800B184FE /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		2B3E042D1B99F3E800B184FE /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		2B5F3EB81B7A899600E10F89 /* What's Next.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "What's Next.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B5F3EBC1B7A899600E10F89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B5F3EBD1B7A899600E10F89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -207,6 +210,8 @@
 			children = (
 				2B99F2C51B88019500AFC30B /* JLTTabSegue.h */,
 				2B99F2C31B88018D00AFC30B /* JLTTabSegue.m */,
+				2B3E042C1B99F3E800B184FE /* Reachability.h */,
+				2B3E042D1B99F3E800B184FE /* Reachability.m */,
 				2B99F2C61B8D094C00AFC30B /* GlowingButton.swift */,
 			);
 			name = Library;
@@ -358,6 +363,7 @@
 				2B5F3F0B1B7BB5EB00E10F89 /* FeedItem.swift in Sources */,
 				2B99F2C71B8D094C00AFC30B /* GlowingButton.swift in Sources */,
 				2B5F3F201B7CF54600E10F89 /* VenueViewController.swift in Sources */,
+				2B3E042E1B99F3E800B184FE /* Reachability.m in Sources */,
 				2B5F3EBE1B7A899600E10F89 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

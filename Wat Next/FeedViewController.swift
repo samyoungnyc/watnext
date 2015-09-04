@@ -8,6 +8,7 @@ class FeedViewController: UITableViewController {
     var feedItems: [FeedItem] = []
     
     func getAndShowFeedItems() {
+        self.reachabilityStatusChanged()
         feedItems.removeAll(keepCapacity: false)
         
         let getFeedItems = FeedItem.query()
@@ -21,7 +22,10 @@ class FeedViewController: UITableViewController {
                         break
                     }
                 }
-            } else {
+            } else if error!.code == 100 {
+                getFeedItems?.cancel()
+                "print no network"
+            } else  {
                 print("Error with getAndShowFeedItems query")
             }
             self.tableView.reloadData()
@@ -40,6 +44,16 @@ class FeedViewController: UITableViewController {
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(nil, forKey: "nextPushed")
         defaults.synchronize()
+    }
+    
+    func reachabilityStatusChanged() {
+        if reachabilityStatus == kNotReachable {
+            let alertController = UIAlertController(title: "Oops", message: "Trouble With Network", preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
     }
     
     override func viewDidLoad() {
@@ -64,11 +78,17 @@ class FeedViewController: UITableViewController {
         imageView.image = image
         navigationItem.titleView = imageView
         
+        // Add observer and check if reachability status changed
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityStatusChanged", name: "reachStatusChanged", object: nil)
+        
+        self.reachabilityStatusChanged()
+        
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         getAndShowFeedItems()
-    
+        
     }
     
     // MARK: TableView Delegate Methods
@@ -107,7 +127,7 @@ class FeedViewController: UITableViewController {
                 cell.imageView?.clipsToBounds = true
             }
         }
-
+        
         return cell
     }
 }

@@ -10,12 +10,20 @@ import UIKit
 import Parse
 import Bolts
 
+let kReachableWithWifi = "ReachableWithWiFi"
+let kReachableWithWWAN = "ReachableWithWWAN"
+let kNotReachable = "NotReachable"
+
+var reachability: Reachability?
+var reachabilityStatus = kReachableWithWifi
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    var internetReach: Reachability?
+    
         func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
             //test test
             // [Optional] Power your app with Local Datastore. For more info, go to
@@ -28,13 +36,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             Venue.registerSubclass()
             FeedItem.registerSubclass()
-            
+        
             // [Optional] Track statistics around application opens.
             PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
-        
+            
+            // Internet Reachability methods
+            internetReach = Reachability.reachabilityForInternetConnection()
+            internetReach?.startNotifier()
+            
+            if internetReach != nil {
+                self.statusChangedWithReachability(internetReach!)
+            }
+            
+            // add observer to reachability changed notifications
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityChanged:", name: kReachabilityChangedNotification, object: nil)
+            
         return true
     }
+    
+    func statusChangedWithReachability(currentReachabilityStatus: Reachability) {
         
+        let networkStatus: NetworkStatus = currentReachabilityStatus.currentReachabilityStatus()
+        
+        var statusString: String = ""
+        
+        print("Statusvalue: \(networkStatus.rawValue)")
+        
+        if networkStatus.rawValue == NotReachable.rawValue {
+            print("no network reachability")
+            reachabilityStatus = kNotReachable
+        } else if networkStatus.rawValue == ReachableViaWiFi.rawValue {
+            print("reachable thru wifi")
+            reachabilityStatus = kReachableWithWifi
+        } else if networkStatus.rawValue == ReachableViaWWAN.rawValue {
+            print("reachable thru mobile network")
+            reachabilityStatus == kReachableWithWWAN
+        }
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("reachStatusChanged", object: nil)
+    }
+
+    func reachabilityChanged(notification: NSNotification) {
+        print("reachability changed...")
+        reachability = notification.object as? Reachability
+        
+        self.statusChangedWithReachability(reachability!)
+        
+    }
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -42,8 +90,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        // stop listening to the reachability changed notification
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: kReachabilityChangedNotification, object: nil)
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
