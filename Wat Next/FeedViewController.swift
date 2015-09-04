@@ -127,7 +127,6 @@ class FeedViewController: UITableViewController {
                 cell.imageView?.clipsToBounds = true
             }
         }
-        
         return cell
     }
 }
