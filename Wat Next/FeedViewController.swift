@@ -8,7 +8,7 @@ class FeedViewController: UITableViewController {
     var feedItems: [FeedItem] = []
     
     func getAndShowFeedItems() {
-        self.reachabilityStatusChanged()
+
         feedItems.removeAll(keepCapacity: false)
         
         let getFeedItems = FeedItem.query()
@@ -46,16 +46,6 @@ class FeedViewController: UITableViewController {
         defaults.synchronize()
     }
     
-    func reachabilityStatusChanged() {
-        if reachabilityStatus == kNotReachable {
-            let alertController = UIAlertController(title: "Oops", message: "Trouble With Network", preferredStyle: .Alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-            alertController.addAction(defaultAction)
-            
-            self.presentViewController(alertController, animated: true, completion: nil)
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -77,12 +67,6 @@ class FeedViewController: UITableViewController {
         let image = UIImage(named: "navlogo")
         imageView.image = image
         navigationItem.titleView = imageView
-        
-        // Add observer and check if reachability status changed
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityStatusChanged", name: "reachStatusChanged", object: nil)
-        
-        self.reachabilityStatusChanged()
         
     }
     override func viewWillAppear(animated: Bool) {

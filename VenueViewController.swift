@@ -15,7 +15,7 @@ class VenueViewController: UIViewController, UICollectionViewDataSource, UIColle
     @IBOutlet weak var searchBar: UISearchBar!
     
     func fetchItems() {
-        self.reachabilityStatusChanged()
+
         venueItems.removeAll(keepCapacity: false)
         let prepItems = Venue.query()
         
@@ -51,18 +51,10 @@ class VenueViewController: UIViewController, UICollectionViewDataSource, UIColle
         self.fetchItems()
     }
     
-    func reachabilityStatusChanged() {
-        if reachabilityStatus == kNotReachable {
-            let alertController = UIAlertController(title: "Oops", message: "Trouble With Network", preferredStyle: .Alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-            alertController.addAction(defaultAction)
-            
-            self.presentViewController(alertController, animated: true, completion: nil)
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         // MARK: NavBar Styling
         let nav = self.navigationController?.navigationBar
         nav?.barStyle = UIBarStyle.Black
@@ -71,12 +63,6 @@ class VenueViewController: UIViewController, UICollectionViewDataSource, UIColle
         let image = UIImage(named: "navlogo")
         imageView.image = image
         navigationItem.titleView = imageView
-        
-        // Add observer and check if reachability status changed
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityStatusChanged", name: "reachStatusChanged", object: nil)
-        
-        self.reachabilityStatusChanged()
         
         //serach bar delegate
         searchBar.delegate = self
@@ -94,8 +80,6 @@ class VenueViewController: UIViewController, UICollectionViewDataSource, UIColle
     override func viewDidAppear(animated: Bool) {
         
         fetchItems()
-        
-        //        searchQuery()
         
         // Defaults for segueing
         
@@ -122,12 +106,12 @@ class VenueViewController: UIViewController, UICollectionViewDataSource, UIColle
         let cellWidth = screenWidth/3.0
         return CGSize(width: cellWidth, height: cellWidth)
     }
+    
     //
-    ////
-    //    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
-    //        minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
-    //            return 0
-    //    }
+        func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+            minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+                return 0
+        }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("venueCell", forIndexPath: indexPath) as! VenueItemCell
