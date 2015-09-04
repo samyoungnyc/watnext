@@ -28,10 +28,13 @@ class FeedViewController: UITableViewController {
             } else  {
                 print("Error with getAndShowFeedItems query")
             }
-            self.tableView.reloadData()
-            self.refreshControl?.endRefreshing()
-            self.resetUserDefaults()
-            self.scrollToFirstRow()
+            dispatch_async(dispatch_get_main_queue()) {
+                self.tableView.reloadData()
+                getFeedItems?.cachePolicy = PFCachePolicy.NetworkElseCache
+                self.refreshControl?.endRefreshing()
+                self.resetUserDefaults()
+                self.scrollToFirstRow()
+            }
         }
     }
     

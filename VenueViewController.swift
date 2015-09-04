@@ -32,7 +32,10 @@ class VenueViewController: UIViewController, UICollectionViewDataSource, UIColle
             } else {
                 print("Error %@ %@", error, error!.userInfo)
             }
-            self.collectionView?.reloadData()
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.collectionView?.reloadData()
+                    prepItems!.cachePolicy = PFCachePolicy.NetworkElseCache
+            }
         })
     }
     
