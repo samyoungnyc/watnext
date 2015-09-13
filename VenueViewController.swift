@@ -14,10 +14,11 @@ class VenueViewController: UICollectionViewController {
 
     
     func fetchItems() {
-        venueItems.removeAll(keepCapacity: false)
+        
         let prepItems = Venue.query()
         
         prepItems?.findObjectsInBackgroundWithBlock({ (objects:[AnyObject]?, error: NSError?) -> Void in
+            self.venueItems.removeAll(keepCapacity: false)
             if (error == nil) {
                 for object in objects! {
                     self.venueItems.append(object as! Venue)
