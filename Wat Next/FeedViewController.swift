@@ -7,48 +7,7 @@ import UIKit
 class FeedViewController: UITableViewController {
     var feedItems: [FeedItem] = []
     
-    func getAndShowFeedItems() {
 
-        feedItems.removeAll(keepCapacity: false)
-        
-        let getFeedItems = FeedItem.query()
-        getFeedItems!.orderByDescending("createdAt")
-        
-        getFeedItems!.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
-            if error == nil {
-                for object in objects! {
-                    self.feedItems.append(object as! FeedItem)
-                    if self.feedItems.count == 35 {
-                        break
-                    }
-                }
-            } else if error!.code == 100 {
-                getFeedItems?.cancel()
-                "print no network"
-            } else  {
-                print("Error with getAndShowFeedItems query")
-            }
-            dispatch_async(dispatch_get_main_queue()) {
-                self.tableView.reloadData()
-                getFeedItems?.cachePolicy = PFCachePolicy.NetworkElseCache
-                self.refreshControl?.endRefreshing()
-                self.resetUserDefaults()
-                self.scrollToFirstRow()
-            }
-        }
-    }
-    
-    func scrollToFirstRow() {
-        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-        self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
-    }
-    
-    func resetUserDefaults() {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(nil, forKey: "nextPushed")
-        defaults.synchronize()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -72,6 +31,7 @@ class FeedViewController: UITableViewController {
         navigationItem.titleView = imageView
         
     }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         getAndShowFeedItems()
@@ -88,7 +48,7 @@ class FeedViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return self.view.frame.height - 112 // explanation needed
+        return self.view.frame.height - 112
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -105,15 +65,79 @@ class FeedViewController: UITableViewController {
         cell.timeStamp?.text = dateString
         
         // MARK: Setup image for cell
-        cell.venueImage?.image = UIImage(named: "1.png")
-        let image = currentItem.imageFile
-        image.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
-            if !(error != nil) {
-                cell.venueImage?.image = UIImage(data: imageData!)
-                cell.imageView?.contentMode = .ScaleAspectFit
-                cell.imageView?.clipsToBounds = true
+        if let image = UIImage(data: currentItem.imageData)
+        {
+            cell.venueImage?.image = image
+            cell.imageView?.contentMode = .ScaleAspectFit
+            cell.imageView?.clipsToBounds = true
+        } else {
+            cell.venueImage?.image = UIImage(named: "1.png")
+            
+            
+            let image = currentItem.imageFile
+            image.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
+                if !(error != nil) {
+                    currentItem.imageData = imageData!
+                    let index = self.feedItems.indexOf(currentItem)
+                    if index != NSNotFound
+                    {
+                        tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: index!, inSection: 0)], withRowAnimation: .None)
+                    }
+                    
+                }
             }
         }
+        
         return cell
+    }
+    
+    func getAndShowFeedItems() {
+
+//        feedItems.removeAll(keepCapacity: false)
+        self.tableView.reloadData()
+        let getFeedItems = FeedItem.query()
+        getFeedItems!.orderByDescending("createdAt")
+        getFeedItems!.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+            if error == nil {
+                self.feedItems.removeAll(keepCapacity: false)
+                for object in objects! {
+                    self.feedItems.append(object as! FeedItem)
+                    if self.feedItems.count == 35 {
+                        break
+                    }
+                }
+            } else if error!.code ==  PFErrorCode.ErrorConnectionFailed.rawValue {
+                self.showNetworkAlert()
+                print("there's a networking problem")
+            }
+                self.tableView.reloadData()
+                self.refreshControl?.endRefreshing()
+                self.resetUserDefaults()
+                self.scrollToFirstRow()
+        }
+    }
+    
+    func scrollToFirstRow() {
+        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+        self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
+    }
+    
+    func resetUserDefaults() {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(nil, forKey: "nextPushed")
+        defaults.synchronize()
+    }
+    
+    func showNetworkAlert() {
+        let networkAlert = UIAlertController(title: "Oops!", message: "You aren't connected, this will cause problems", preferredStyle: .Alert)
+        
+        let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+            
+        }
+        networkAlert.addAction(OKAction)
+        
+        self.presentViewController(networkAlert, animated: true) {
+            print("unreachable alert shown")
+        }
     }
 }

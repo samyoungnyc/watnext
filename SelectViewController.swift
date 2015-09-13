@@ -39,7 +39,6 @@ class SelectViewController: UIViewController {
             feedItem.imageFile = currentVenue.lgImg
 //            feedItem.location = currentVenue.venueLocation
             feedItem.userName = user!.username!
-        
         feedItem.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
             self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
         })

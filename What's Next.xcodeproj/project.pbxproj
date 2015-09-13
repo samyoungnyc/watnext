@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B3E042E1B99F3E800B184FE /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3E042D1B99F3E800B184FE /* Reachability.m */; settings = {ASSET_TAGS = (); }; };
 		2B5F3EBE1B7A899600E10F89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3EBD1B7A899600E10F89 /* AppDelegate.swift */; };
 		2B5F3EC31B7A899600E10F89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B5F3EC11B7A899600E10F89 /* Main.storyboard */; };
 		2B5F3EC81B7A899600E10F89 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B5F3EC61B7A899600E10F89 /* LaunchScreen.xib */; };
-		2B5F3ED41B7A899600E10F89 /* Wat_NextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3ED31B7A899600E10F89 /* Wat_NextTests.swift */; };
 		2B5F3EE01B7A8A3600E10F89 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B5F3EDE1B7A8A3600E10F89 /* Bolts.framework */; };
 		2B5F3EE11B7A8A3600E10F89 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B5F3EDF1B7A8A3600E10F89 /* Parse.framework */; };
 		2B5F3EE31B7A8A4500E10F89 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B5F3EE21B7A8A4500E10F89 /* ParseUI.framework */; };
@@ -40,25 +38,12 @@
 		2B99F2C71B8D094C00AFC30B /* GlowingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B99F2C61B8D094C00AFC30B /* GlowingButton.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		2B5F3ECE1B7A899600E10F89 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2B5F3EB01B7A899600E10F89 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2B5F3EB71B7A899600E10F89;
-			remoteInfo = "Wat Next";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		2B3E042C1B99F3E800B184FE /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		2B3E042D1B99F3E800B184FE /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		2B5F3EB81B7A899600E10F89 /* What's Next.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "What's Next.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B5F3EBC1B7A899600E10F89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B5F3EBD1B7A899600E10F89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B5F3EC21B7A899600E10F89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2B5F3EC71B7A899600E10F89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		2B5F3ECD1B7A899600E10F89 /* What's NextTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "What's NextTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B5F3ED21B7A899600E10F89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B5F3ED31B7A899600E10F89 /* Wat_NextTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wat_NextTests.swift; sourceTree = "<group>"; };
 		2B5F3EDE1B7A8A3600E10F89 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -113,13 +98,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2B5F3ECA1B7A899600E10F89 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -138,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				2B5F3EB81B7A899600E10F89 /* What's Next.app */,
-				2B5F3ECD1B7A899600E10F89 /* What's NextTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -210,8 +187,6 @@
 			children = (
 				2B99F2C51B88019500AFC30B /* JLTTabSegue.h */,
 				2B99F2C31B88018D00AFC30B /* JLTTabSegue.m */,
-				2B3E042C1B99F3E800B184FE /* Reachability.h */,
-				2B3E042D1B99F3E800B184FE /* Reachability.m */,
 				2B99F2C61B8D094C00AFC30B /* GlowingButton.swift */,
 			);
 			name = Library;
@@ -261,24 +236,6 @@
 			productReference = 2B5F3EB81B7A899600E10F89 /* What's Next.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2B5F3ECC1B7A899600E10F89 /* What's NextTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2B5F3EDA1B7A899600E10F89 /* Build configuration list for PBXNativeTarget "What's NextTests" */;
-			buildPhases = (
-				2B5F3EC91B7A899600E10F89 /* Sources */,
-				2B5F3ECA1B7A899600E10F89 /* Frameworks */,
-				2B5F3ECB1B7A899600E10F89 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2B5F3ECF1B7A899600E10F89 /* PBXTargetDependency */,
-			);
-			name = "What's NextTests";
-			productName = "Wat NextTests";
-			productReference = 2B5F3ECD1B7A899600E10F89 /* What's NextTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -302,10 +259,6 @@
 							};
 						};
 					};
-					2B5F3ECC1B7A899600E10F89 = {
-						CreatedOnToolsVersion = 6.3;
-						TestTargetID = 2B5F3EB71B7A899600E10F89;
-					};
 				};
 			};
 			buildConfigurationList = 2B5F3EB31B7A899600E10F89 /* Build configuration list for PBXProject "What's Next" */;
@@ -322,7 +275,6 @@
 			projectRoot = "";
 			targets = (
 				2B5F3EB71B7A899600E10F89 /* What's Next */,
-				2B5F3ECC1B7A899600E10F89 /* What's NextTests */,
 			);
 		};
 /* End PBXProject section */
@@ -336,13 +288,6 @@
 				2B5F3EC31B7A899600E10F89 /* Main.storyboard in Resources */,
 				2B5F3F1E1B7BEE9900E10F89 /* Angelface.otf in Resources */,
 				2B5F3EC81B7A899600E10F89 /* LaunchScreen.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2B5F3ECB1B7A899600E10F89 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,28 +308,11 @@
 				2B5F3F0B1B7BB5EB00E10F89 /* FeedItem.swift in Sources */,
 				2B99F2C71B8D094C00AFC30B /* GlowingButton.swift in Sources */,
 				2B5F3F201B7CF54600E10F89 /* VenueViewController.swift in Sources */,
-				2B3E042E1B99F3E800B184FE /* Reachability.m in Sources */,
 				2B5F3EBE1B7A899600E10F89 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2B5F3EC91B7A899600E10F89 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2B5F3ED41B7A899600E10F89 /* Wat_NextTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		2B5F3ECF1B7A899600E10F89 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2B5F3EB71B7A899600E10F89 /* What's Next */;
-			targetProxy = 2B5F3ECE1B7A899600E10F89 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2B5F3EC11B7A899600E10F89 /* Main.storyboard */ = {
@@ -426,6 +354,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -472,6 +401,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -495,6 +425,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -503,6 +434,11 @@
 				INFOPLIST_FILE = "Wat Next/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Release-iphoneos",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "computer.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Wat Next/Wat Next-Bridging-Header.h";
@@ -515,6 +451,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -523,47 +460,14 @@
 				INFOPLIST_FILE = "Wat Next/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Release-iphoneos",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "computer.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Wat Next/Wat Next-Bridging-Header.h";
-			};
-			name = Release;
-		};
-		2B5F3EDB1B7A899600E10F89 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Wat NextTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "computer.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/What's Next.app/What's Next";
-			};
-			name = Debug;
-		};
-		2B5F3EDC1B7A899600E10F89 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				ENABLE_BITCODE = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Wat NextTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "computer.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/What's Next.app/What's Next";
 			};
 			name = Release;
 		};
@@ -584,15 +488,6 @@
 			buildConfigurations = (
 				2B5F3ED81B7A899600E10F89 /* Debug */,
 				2B5F3ED91B7A899600E10F89 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2B5F3EDA1B7A899600E10F89 /* Build configuration list for PBXNativeTarget "What's NextTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2B5F3EDB1B7A899600E10F89 /* Debug */,
-				2B5F3EDC1B7A899600E10F89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

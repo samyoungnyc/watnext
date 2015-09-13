@@ -12,6 +12,10 @@ class FeedItem: PFObject, PFSubclassing {
     @NSManaged var venueName: String
     @NSManaged var imageFile: PFFile
     @NSManaged var userName: String
+    @NSManaged var imageData: NSData
+
+    
+
     
     override class func initialize() {
         self.registerSubclass()

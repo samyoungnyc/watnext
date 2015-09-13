@@ -32,24 +32,21 @@ class VenueViewController: UIViewController, UICollectionViewDataSource, UIColle
             } else {
                 print("Error %@ %@", error, error!.userInfo)
             }
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.collectionView?.reloadData()
-                    prepItems!.cachePolicy = PFCachePolicy.NetworkElseCache
-            }
+                self.collectionView?.reloadData()
         })
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         print("search and found: \(venueItems.count) items")
-        
         self.fetchItems()
+        
+
     }
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         // clear search criteria
         searchBar.text = ""
-        
         searchBar.resignFirstResponder()
         self.fetchItems()
     }
@@ -71,12 +68,11 @@ class VenueViewController: UIViewController, UICollectionViewDataSource, UIColle
         searchBar.delegate = self
         
         
-        //        let cellWidth = ((UIScreen.mainScreen().bounds.width)) / 3
-        //        print(cellWidth)
-        //        let cellLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        //        cellLayout.itemSize = CGSize(width: cellWidth, height: cellWidth)
+                let cellWidth = ((UIScreen.mainScreen().bounds.width)) / 3
+                print(cellWidth)
+                let cellLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+                cellLayout.itemSize = CGSize(width: cellWidth, height: cellWidth)
         
-        // Fetch Venues for VenueCollectionView
         
     }
     
@@ -104,12 +100,12 @@ class VenueViewController: UIViewController, UICollectionViewDataSource, UIColle
         return venueItems.count
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexpath: NSIndexPath) -> CGSize {
-        let screenWidth = CGRectGetWidth(collectionView.bounds)
-        let cellWidth = screenWidth/3.0
-        return CGSize(width: cellWidth, height: cellWidth)
-    }
-    
+//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexpath: NSIndexPath) -> CGSize {
+//        let screenWidth = CGRectGetWidth(collectionView.bounds)
+//        let cellWidth = screenWidth/3.0
+//        return CGSize(width: cellWidth, height: cellWidth)
+//    }
+//    
     //
         func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
             minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {

@@ -14,25 +14,22 @@ import Bolts
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
-    var internetReach: Reachability?
-    
+        
         func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-            //test test
             // [Optional] Power your app with Local Datastore. For more info, go to
             // https://parse.com/docs/ios_guide#localdatastore/iOS
-//            Parse.enableLocalDatastore()
+            Parse.enableLocalDatastore()
             
             // Initialize Parse.
             Parse.setApplicationId("orRVdhYXTKdCAGRLDnGunMS5AkkOtW8h05zuyze2",
                 clientKey: "aNtYN2fVmdfmInOcdQWrVGneCZzten5BCDQ3A2Qs")
-            
+
             Venue.registerSubclass()
             FeedItem.registerSubclass()
         
             // [Optional] Track statistics around application opens.
             PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
-            
+                        
         return true
     }
     
@@ -42,8 +39,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(application: UIApplication) {
-        // stop listening to the reachability changed notification
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: kReachabilityChangedNotification, object: nil)
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
