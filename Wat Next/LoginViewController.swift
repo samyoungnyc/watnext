@@ -62,7 +62,7 @@ class LoginViewController: UITabBarController, PFLogInViewControllerDelegate, PF
             // 'signUpController' is a child of loginView, so here it's declared
             loginViewController.signUpController = signupViewController
             
-            loginViewController.fields = ([PFLogInFields.UsernameAndPassword, PFLogInFields.LogInButton, PFLogInFields.SignUpButton, PFLogInFields.PasswordForgotten, PFLogInFields.DismissButton])
+            loginViewController.fields = PFLogInFields.Default
             
             // MARK: Login Customization
             

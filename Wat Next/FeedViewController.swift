@@ -8,12 +8,13 @@ class FeedViewController: UITableViewController {
     var feedItems: [FeedItem] = []
     
     func getAndShowFeedItems() {
-        feedItems.removeAll(keepCapacity: false)
+        
         
         let getFeedItems = FeedItem.query()
         getFeedItems!.orderByDescending("createdAt")
         
         getFeedItems!.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+            self.feedItems.removeAll(keepCapacity: false)
             if error == nil {
                 for object in objects! {
                     self.feedItems.append(object as! FeedItem)
