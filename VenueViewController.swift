@@ -16,7 +16,7 @@ class VenueViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     func fetchItems() {
 
-        venueItems.removeAll(keepCapacity: false)
+
         let prepItems = Venue.query()
         
         if searchBar.text != "" {
@@ -24,8 +24,8 @@ class VenueViewController: UIViewController, UICollectionViewDataSource, UIColle
         }
         
         prepItems?.findObjectsInBackgroundWithBlock({ (objects:[AnyObject]?, error: NSError?) -> Void in
+            self.venueItems.removeAll(keepCapacity: true)
             if (error == nil) {
-                self.venueItems.removeAll(keepCapacity: true)
                 for object in objects! {
                     self.venueItems.append(object as! Venue)
                 }
