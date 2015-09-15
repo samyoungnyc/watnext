@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VenueViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate {
+class VenueViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     var venueItems: [Venue] = []
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -107,7 +107,7 @@ class VenueViewController: UIViewController, UICollectionViewDataSource, UIColle
 //    }
 //    
     //
-        func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
             minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
                 return 0
         }
@@ -120,7 +120,7 @@ class VenueViewController: UIViewController, UICollectionViewDataSource, UIColle
         imageView.file = currentItem.thumbImg
         imageView.loadInBackground { (image: UIImage?, error: NSError?) -> Void in
             cell.imageView!.image = image
-            cell.imageView.contentMode = .ScaleAspectFit
+            //cell.imageView.contentMode = .ScaleAspectFit
         }
         return cell
     }
@@ -132,6 +132,11 @@ class VenueViewController: UIViewController, UICollectionViewDataSource, UIColle
         selectVC.currentVenue = venueItems[indexPath.row]
         
         presentViewController(selectNavigationController, animated: true, completion: nil)
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let width = collectionView.frame.size.width/3.0;
+        return CGSize(width: width, height: width);
     }
     
 }
