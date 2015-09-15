@@ -71,7 +71,7 @@ class SelectViewController: UIViewController {
             imageView.file = currentVenue.lgImg
             imageView.loadInBackground({ (image: UIImage?, error: NSError?) -> Void in
                 self.imageView.image = image
-                self.imageView.contentMode = .ScaleAspectFit
+               // self.imageView.contentMode = .ScaleAspectFit
             })
         }
     }

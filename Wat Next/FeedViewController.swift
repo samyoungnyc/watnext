@@ -30,6 +30,8 @@ class FeedViewController: UITableViewController {
         imageView.image = image
         navigationItem.titleView = imageView
         
+        // TableView separator style (get's rid of black lines in tableview) 
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -39,6 +41,7 @@ class FeedViewController: UITableViewController {
     }
     
     // MARK: TableView Delegate Methods
+
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -93,13 +96,12 @@ class FeedViewController: UITableViewController {
     
     func getAndShowFeedItems() {
 
-//        feedItems.removeAll(keepCapacity: false)
         self.tableView.reloadData()
         let getFeedItems = FeedItem.query()
         getFeedItems!.orderByDescending("createdAt")
         getFeedItems!.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+            self.feedItems.removeAll(keepCapacity: false)
             if error == nil {
-                self.feedItems.removeAll(keepCapacity: false)
                 for object in objects! {
                     self.feedItems.append(object as! FeedItem)
                     if self.feedItems.count == 35 {
